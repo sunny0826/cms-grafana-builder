@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "grafana-cms-provisionings"
+  labels:
+{{ include "kk-grafana-cms.labels" . | indent 4 }}
+data:
+  dashboards.yaml: |
+    apiVersion: 1
+
+    providers:
+     - name: ALIYUN_CMS
+       orgId: 1
+       folder: '阿里云监控'
+       type: file
+       updateIntervalSeconds: 0
+       options:
+         path: /var/lib/grafana/cms-dashboards
