@@ -13,7 +13,7 @@ data:
        orgId: 1
        folder: '阿里云监控'
        type: file
-       updateIntervalSeconds: 0
+       updateIntervalSeconds: 180
        options:
          path: /var/lib/grafana/cms-dashboards
 

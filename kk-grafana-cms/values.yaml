@@ -18,6 +18,7 @@ build_image:
   tag: latest
   pullPolicy: Always
 
+schedule: "30 2 * * *"
 
 nameOverride: ""
 fullnameOverride: ""

@@ -39,8 +39,6 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.namespace
-        - name: DEPLOYMENT_NAME
-          value: {{ template "kk-grafana-cms.fullname" . }}
         command: ["cmsbuilder"]
 {{/*        args:*/}}
 {{/*          - --out-path*/}}

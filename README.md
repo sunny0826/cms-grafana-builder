@@ -15,6 +15,7 @@ To install the chart with the release name `my-release`:
 ```bash
 # start
 $ helm install my-release kk-grafana-cms \
+--namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
 --set region_id={your_aliyun_region_id} \
@@ -22,6 +23,7 @@ $ helm install my-release kk-grafana-cms \
 
 # set ingress and open tls
 helm install my-release kk-grafana-cms \
+--namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
 --set region_id={your_aliyun_region_id} \
@@ -51,6 +53,7 @@ Parameter                 	 	| Description                        				| Default
 `access_secret`                	| Aliyun Access Secret.                  			| ``
 `region_id`                    	| Aliyun Region Id.                        			| `cn-shanghai`
 `password`                    	| Grafana admin password.                  			| `admin`
+`schedule`                    	| CronJob schedule.                     			| `"30 2 * * *"`
 `image.repository`           	| Image source repository name.         			| `registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana`
 `image.pullPolicy`         		| Image pull policy                  				| `IfNotPresent`
 `build_image.repository`        | Build image source repository name.         	    | `registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build`
