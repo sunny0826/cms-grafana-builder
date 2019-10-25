@@ -8,15 +8,15 @@ import traceback
 import demjson
 from aliyunsdkslb.request.v20140515.DescribeLoadBalancersRequest import DescribeLoadBalancersRequest
 
-from cli.aliyun_base import AliyunBase, readj2, writej2
+from cli.aliyun_base import AliyunBase, readj2
 
 
 class AliyunSlb(AliyunBase):
 
-    def __init__(self, clent, outPath):
+    def __init__(self, clent,):
         super(AliyunSlb, self).__init__()
         self.clent = clent
-        self.outjson = outPath
+        # self.outjson = outPath
         self.request = DescribeLoadBalancersRequest()
         self.product = 'slb'
 
@@ -48,11 +48,13 @@ class AliyunSlb(AliyunBase):
                                                     thresholds=thresholds))
         template = readj2(panels_template)
         resultjson = template.render(panels_card=demjson.encode(panels_cards), title=title, tag="SLB")
-        print(resultjson)
-        writej2('{0}/{1}.json'.format(self.check_dir(), metric), resultjson)
+        # print(resultjson)
+        # writej2('{0}/{1}.json'.format(self.check_dir(), metric), resultjson)
         # writej2("slb/" + metric + ".json", resultjson)
+        return {'cms-{0}.json'.format(metric): resultjson}
 
     def action(self, ):
+        print('Generating SLB config')
         metric_list = [
             {"field": "HeathyServerCount", "name": "后端健康ECS实例个数"},
             {"field": "UnhealthyServerCount", "name": "后端异常ECS实例个数"},
@@ -83,11 +85,14 @@ class AliyunSlb(AliyunBase):
             {"field": "InstanceUpstreamRt", "name": "实例维度的rs发给proxy的平均请求延迟"},
             {"field": "InstanceQpsUtilization", "name": "QPS使用率"},
         ]
+        result_dict = {}
         slb_list = self.load_all()
         for metric in metric_list:
-            self.GenerateSlbDashboard(slb_list, "card.json.j2", "dashboard.json.j2", metric.get("field"), "",
-                                      metric.get("name"))
+            result_dict.update(
+                self.GenerateSlbDashboard(slb_list, "card.json.j2", "dashboard.json.j2", metric.get("field"), "",
+                                          metric.get("name")))
         print("Build Success!")
+        return result_dict
 
 
 if __name__ == '__main__':

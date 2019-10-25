@@ -16,7 +16,7 @@ image:
 build_image:
   repository: guoxudongdocker/grafana-build
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 
 nameOverride: ""

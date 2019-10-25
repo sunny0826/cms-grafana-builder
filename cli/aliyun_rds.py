@@ -13,10 +13,10 @@ from cli.aliyun_base import AliyunBase, readj2, writej2
 
 class AliyunRds(AliyunBase):
 
-    def __init__(self, clent, outPath):
+    def __init__(self, clent):
         super(AliyunRds, self).__init__()
         self.clent = clent
-        self.outjson = outPath
+        # self.outjson = outPath
         self.request = DescribeDBInstancesRequest()
         self.product = 'rds'
 
@@ -48,11 +48,13 @@ class AliyunRds(AliyunBase):
                                      targets=demjson.encode(panels_lines)))
         dashboard_template = readj2("dashboard.json.j2")
         resultjson = dashboard_template.render(panels_card=demjson.encode(dashboard_lines), title="RDS监控", tag="RDS")
-        print(resultjson)
-        writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
+        # print(resultjson)
+        # writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
         # writej2("rds/RDS.json", resultjson)
+        return {'cms-{0}.json'.format(self.product): resultjson}
 
     def action(self, ):
+        print('Generating RDS config')
         metric_list = [
             {"field": "CpuUsage", "name": "CPU使用率", "format": "percent"},
             {"field": "DiskUsage", "name": "磁盘使用率", "format": "percent"},
@@ -65,8 +67,8 @@ class AliyunRds(AliyunBase):
             {"field": "MySQL_ActiveSessions", "name": "Mysql当前活跃Sessions数", "format": "short"},
         ]
         rds_list = self.load_all()
-        self.GenerateRdsDashboard(rds_list, "line.json.j2", "linePanels.json.j2", metric_list)
         print("build success!")
+        return self.GenerateRdsDashboard(rds_list, "line.json.j2", "linePanels.json.j2", metric_list)
 
 
 if __name__ == '__main__':

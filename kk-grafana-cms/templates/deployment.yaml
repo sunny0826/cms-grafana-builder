@@ -16,6 +16,7 @@ spec:
         app.kubernetes.io/name: {{ include "kk-grafana-cms.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      serviceAccountName: {{ .Chart.Name }}-sa
       initContainers:
       - name: init
         image: "{{ .Values.build_image.repository}}:{{ .Values.build_image.tag }}"
@@ -33,13 +34,20 @@ spec:
               key: accessSecret
         - name: REGION_ID
           value: {{ .Values.region_id }}
+        - name: INIT_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: DEPLOYMENT_NAME
+          value: {{ template "kk-grafana-cms.fullname" . }}
         command: ["cmsbuilder"]
-        args:
-          - --out-path
-          - /work-dir
-        volumeMounts:
-        - name: workdir
-          mountPath: "/work-dir"
+{{/*        args:*/}}
+{{/*          - --out-path*/}}
+{{/*          - /work-dir*/}}
+{{/*        volumeMounts:*/}}
+{{/*        - name: workdir*/}}
+{{/*          mountPath: "/work-dir"*/}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
@@ -60,8 +68,8 @@ spec:
           volumeMounts:
           - mountPath: /var/lib/grafana
             name: grafana-storage
-          - name: workdir
-            mountPath: /var/lib/grafana/cms-dashboards
+{{/*          - name: workdir*/}}
+{{/*            mountPath: /var/lib/grafana/cms-dashboards*/}}
           - mountPath: /etc/grafana/provisioning/dashboards/all.yaml
             name: grafana-provisionings
             subPath: dashboards.yaml
@@ -71,6 +79,8 @@ spec:
           - name: datasource
             mountPath: /etc/grafana/provisioning/datasources/all.yaml
             subPath: all.yaml
+          - name: grafana-dashboards
+            mountPath: /var/lib/grafana/cms-dashboards
           resources:
 {{ toYaml .Values.resources | indent 12 }}
         - args:
@@ -79,7 +89,7 @@ spec:
           - daemon off;
           - -c
           - /nginx/nginx.conf
-          image: rancher/nginx:1.15.8-alpine
+          image: nginx:1.15.8-alpine
           imagePullPolicy: IfNotPresent
           name: grafana-proxy
           ports:
@@ -137,4 +147,8 @@ spec:
           defaultMode: 420
           name: grafana-cms-provisionings
         name: grafana-provisionings
+      - configMap:
+          defaultMode: 420
+          name: grafana-cms-dashboards
+        name: grafana-dashboards
 

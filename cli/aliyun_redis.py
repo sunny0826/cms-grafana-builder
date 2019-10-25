@@ -13,10 +13,10 @@ from cli.aliyun_base import AliyunBase, readj2, writej2
 
 class AliyunRedis(AliyunBase):
 
-    def __init__(self, clent, outPath):
+    def __init__(self, clent):
         super(AliyunRedis, self).__init__()
         self.clent = clent
-        self.outjson = outPath
+        # self.outjson = outPath
         self.request = DescribeInstancesRequest()
         self.product = 'redis'
 
@@ -49,11 +49,13 @@ class AliyunRedis(AliyunBase):
         dashboard_template = readj2("dashboard.json.j2")
         resultjson = dashboard_template.render(panels_card=demjson.encode(dashboard_lines), title="redis资源监控",
                                                tag="Redis")
-        print(resultjson)
-        writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
+        # print(resultjson)
+        # writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
         # writej2("redis/redis.json", resultjson)
+        return {'cms-{0}.json'.format(self.product): resultjson}
 
     def action(self, ):
+        print('Generating Redis config')
         metric_list = [
             # {"field": "Standardappend", "name": "append 命令的执行频率", "format": "cps"},
             # {"field": "Standardbitcount", "name": "bitcount 命令的执行频率", "format": "cps"},
@@ -98,8 +100,8 @@ class AliyunRedis(AliyunBase):
             {"field": "StandardKeys", "name": "缓存内 Key 数量", "format": "short", "redline": "80000"},
         ]
         redis_list = self.load_all()
-        self.GenerateRedisDashboard(redis_list, "line.json.j2", "linePanels.json.j2", metric_list)
         print("build success!")
+        return self.GenerateRedisDashboard(redis_list, "line.json.j2", "linePanels.json.j2", metric_list)
 
 
 if __name__ == '__main__':

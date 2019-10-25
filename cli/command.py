@@ -11,6 +11,7 @@ from cli.aliyun_eip import AliyunEip
 from cli.aliyun_rds import AliyunRds
 from cli.aliyun_redis import AliyunRedis
 from cli.aliyun_slb import AliyunSlb
+from cli.k8s import handle_k8s
 
 
 def load_arg(accessKeyId, accessSecret, regionId):
@@ -62,16 +63,17 @@ def main():
         default=getenv('REGION_ID', 'cn-shanghai'),
         help='aliyun regionId,default:cn-shanghai'
     )
-    parser.add_argument(
-        '--out-path',
-        type=str,
-        default=getenv('OUT_PATH', 'jsonconfig'),
-        help='result output path'
-    )
+    # parser.add_argument(
+    #     '--out-path',
+    #     type=str,
+    #     default=getenv('OUT_PATH', 'jsonconfig'),
+    #     help='result output path'
+    # )
     args = parser.parse_args()
     try:
         specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
-        handle(specs, args.out_path)
+        handle_k8s(specs)
+        # handle(specs, args.out_path)
         print('Success generating json configuration!')
     except KeyboardInterrupt:
         pass

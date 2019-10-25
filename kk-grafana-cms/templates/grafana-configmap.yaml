@@ -16,3 +16,12 @@ data:
        updateIntervalSeconds: 0
        options:
          path: /var/lib/grafana/cms-dashboards
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "grafana-cms-dashboards"
+  labels:
+{{ include "kk-grafana-cms.labels" . | indent 4 }}
+data: {}

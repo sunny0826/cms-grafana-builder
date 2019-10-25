@@ -38,6 +38,7 @@ setup(
         'aliyun-python-sdk-vpc==3.0.7',
         'demjson==2.2.4',
         'jmespath==0.9.4',
+        'kubernetes'
     ],
     entry_points={
         'console_scripts': [
