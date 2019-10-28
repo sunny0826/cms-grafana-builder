@@ -17,6 +17,8 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ .Chart.Name }}-sa
+      imagePullSecrets:
+      - name: registry-pull-secret
       initContainers:
       - name: init
         image: "{{ .Values.build_image.repository}}:{{ .Values.build_image.tag }}"

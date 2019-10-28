@@ -8,7 +8,7 @@ import traceback
 import demjson
 from aliyunsdkvpc.request.v20160428.DescribeEipAddressesRequest import DescribeEipAddressesRequest
 
-from cli.aliyun_base import AliyunBase, readj2, writej2
+from cli.aliyun_base import AliyunBase, readj2
 
 
 class AliyunEip(AliyunBase):
@@ -16,7 +16,6 @@ class AliyunEip(AliyunBase):
     def __init__(self, clent):
         super(AliyunEip, self).__init__()
         self.clent = clent
-        # self.outjson = outPath
         self.request = DescribeEipAddressesRequest()
         self.product = 'eip'
 
@@ -55,25 +54,19 @@ class AliyunEip(AliyunBase):
         resultjson = dashboard_template.render(panels_card=demjson.encode(dashboard_lines), title="EIP监控",
                                                tag="EIP")
         # print(resultjson)
-        # writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
-        # writej2("eip/eip.json", resultjson)
         return {'cms-{0}.json'.format(self.product): resultjson}
 
     def action(self, ):
         print('Generating EIP config')
-        metric_list = [
-            {"field": "net_tx.rate", "name": "流出带宽", "format": "bps", "redline": "8000000", "ycol": "Value"},
-            {"field": "net_rx.rate", "name": "流入带宽", "format": "bps", "redline": "8000000", "ycol": "Value"},
-            {"field": "net_txPkgs.rate", "name": "每秒流出数据包数", "format": "cps", "redline": "150000", "ycol": "Value"},
-            {"field": "net_rxPkgs.rate", "name": "每秒流入数据包数", "format": "cps", "redline": "150000", "ycol": "Value"},
-            {"field": "out_ratelimit_drop_speed", "name": "限速丢包速率", "format": "percent", "redline": "5",
-             "ycol": "Average"},
-        ]
+        # metric_list = [
+        #     {"field": "net_tx.rate", "name": "流出带宽", "format": "bps", "redline": "8000000", "ycol": "Value"},
+        #     {"field": "net_rx.rate", "name": "流入带宽", "format": "bps", "redline": "8000000", "ycol": "Value"},
+        #     {"field": "net_txPkgs.rate", "name": "每秒流出数据包数", "format": "cps", "redline": "150000", "ycol": "Value"},
+        #     {"field": "net_rxPkgs.rate", "name": "每秒流入数据包数", "format": "cps", "redline": "150000", "ycol": "Value"},
+        #     {"field": "out_ratelimit_drop_speed", "name": "限速丢包速率", "format": "percent", "redline": "5",
+        #      "ycol": "Average"},
+        # ]
+        metric_list = self.read_metric_config_map('eip')
         eip_list = self.load_all()
         print("build success!")
         return self.GenerateEipDashboard(eip_list, "line.json.j2", "linePanels.json.j2", metric_list)
-
-
-if __name__ == '__main__':
-    eip = AliyunEip()
-    eip.action()

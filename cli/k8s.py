@@ -22,7 +22,6 @@ def handle_k8s(specs):
         data=config_map_data(specs)
     )
     resp = k8s_apps_v1.patch_namespaced_config_map(name='grafana-cms-dashboards', namespace=namespace, body=dep)
-
     print("ConfigMap update. name='%s'" % resp.metadata.name)
 
 

@@ -16,7 +16,6 @@ class AliyunSlb(AliyunBase):
     def __init__(self, clent,):
         super(AliyunSlb, self).__init__()
         self.clent = clent
-        # self.outjson = outPath
         self.request = DescribeLoadBalancersRequest()
         self.product = 'slb'
 
@@ -93,8 +92,3 @@ class AliyunSlb(AliyunBase):
                                           metric.get("name")))
         print("Build Success!")
         return result_dict
-
-
-if __name__ == '__main__':
-    slb = AliyunSlb()
-    slb.action()

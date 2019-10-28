@@ -8,7 +8,7 @@ import traceback
 import demjson
 from aliyunsdkrds.request.v20140815.DescribeDBInstancesRequest import DescribeDBInstancesRequest
 
-from cli.aliyun_base import AliyunBase, readj2, writej2
+from cli.aliyun_base import AliyunBase, readj2
 
 
 class AliyunRds(AliyunBase):
@@ -16,7 +16,6 @@ class AliyunRds(AliyunBase):
     def __init__(self, clent):
         super(AliyunRds, self).__init__()
         self.clent = clent
-        # self.outjson = outPath
         self.request = DescribeDBInstancesRequest()
         self.product = 'rds'
 
@@ -49,28 +48,22 @@ class AliyunRds(AliyunBase):
         dashboard_template = readj2("dashboard.json.j2")
         resultjson = dashboard_template.render(panels_card=demjson.encode(dashboard_lines), title="RDS监控", tag="RDS")
         # print(resultjson)
-        # writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
-        # writej2("rds/RDS.json", resultjson)
         return {'cms-{0}.json'.format(self.product): resultjson}
 
     def action(self, ):
         print('Generating RDS config')
-        metric_list = [
-            {"field": "CpuUsage", "name": "CPU使用率", "format": "percent"},
-            {"field": "DiskUsage", "name": "磁盘使用率", "format": "percent"},
-            {"field": "IOPSUsage", "name": "IOPS使用率", "format": "percent"},
-            {"field": "ConnectionUsage", "name": "连接数使用率", "format": "percent"},
-            {"field": "DataDelay", "name": "只读实例延迟", "format": "s"},
-            {"field": "MemoryUsage", "name": "内存使用率", "format": "percent"},
-            {"field": "MySQL_NetworkOutNew", "name": "Mysql每秒网络出流量", "format": "bps"},
-            {"field": "MySQL_NetworkInNew", "name": "Mysql每秒网络入流量", "format": "bps"},
-            {"field": "MySQL_ActiveSessions", "name": "Mysql当前活跃Sessions数", "format": "short"},
-        ]
+        # metric_list = [
+        #     {"field": "CpuUsage", "name": "CPU使用率", "format": "percent"},
+        #     {"field": "DiskUsage", "name": "磁盘使用率", "format": "percent"},
+        #     {"field": "IOPSUsage", "name": "IOPS使用率", "format": "percent"},
+        #     {"field": "ConnectionUsage", "name": "连接数使用率", "format": "percent"},
+        #     {"field": "DataDelay", "name": "只读实例延迟", "format": "s"},
+        #     {"field": "MemoryUsage", "name": "内存使用率", "format": "percent"},
+        #     {"field": "MySQL_NetworkOutNew", "name": "Mysql每秒网络出流量", "format": "bps"},
+        #     {"field": "MySQL_NetworkInNew", "name": "Mysql每秒网络入流量", "format": "bps"},
+        #     {"field": "MySQL_ActiveSessions", "name": "Mysql当前活跃Sessions数", "format": "short"},
+        # ]
+        metric_list = self.read_metric_config_map('rds')
         rds_list = self.load_all()
         print("build success!")
         return self.GenerateRdsDashboard(rds_list, "line.json.j2", "linePanels.json.j2", metric_list)
-
-
-if __name__ == '__main__':
-    rds = AliyunRds()
-    rds.action()

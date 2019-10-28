@@ -16,7 +16,6 @@ class AliyunEcs(AliyunBase):
     def __init__(self, clent):
         super(AliyunEcs, self).__init__()
         self.clent = clent
-        # self.outjson = outPath
         self.request = DescribeInstancesRequest()
         self.product = 'ecs'
 
@@ -55,26 +54,20 @@ class AliyunEcs(AliyunBase):
         resultjson = dashboard_template.render(panels_card=demjson.encode(dashboard_lines), title="ECS资源监控",
                                                tag="ECS")
         # print(resultjson)
-        # writej2('{0}/{1}.json'.format(self.check_dir(), self.product), resultjson)
-        # writej2("ecs/ecs.json", resultjson)
         return {'cms-{0}.json'.format(self.product): resultjson}
 
     def action(self, ):
         print('Generating ECS config')
-        metric_list = [
-            {"field": "cpu_total", "name": "CPU 使用率", "format": "percent", "redline": "80"},
-            {"field": "memory_usedutilization", "name": "内存使用率", "format": "percent", "redline": "80"},
-            {"field": "diskusage_utilization", "name": "磁盘使用率", "format": "percent", "redline": "80"},
-            {"field": "IntranetInRate", "name": "私网流入带宽", "format": "bps", "redline": "1000"},
-            {"field": "IntranetOutRate", "name": "私网流出带宽", "format": "bps", "redline": "1000"},
-            {"field": "DiskReadIOPS", "name": "系统磁盘读IOPS", "format": "cps", "redline": "1000"},
-            {"field": "DiskWriteIOPS", "name": "系统磁盘写IOPS", "format": "cps", "redline": "1000"},
-        ]
+        # metric_list = [
+        #     {"field": "cpu_total", "name": "CPU 使用率", "format": "percent", "redline": "80"},
+        #     {"field": "memory_usedutilization", "name": "内存使用率", "format": "percent", "redline": "80"},
+        #     {"field": "diskusage_utilization", "name": "磁盘使用率", "format": "percent", "redline": "80"},
+        #     {"field": "IntranetInRate", "name": "私网流入带宽", "format": "bps", "redline": "1000"},
+        #     {"field": "IntranetOutRate", "name": "私网流出带宽", "format": "bps", "redline": "1000"},
+        #     {"field": "DiskReadIOPS", "name": "系统磁盘读IOPS", "format": "cps", "redline": "1000"},
+        #     {"field": "DiskWriteIOPS", "name": "系统磁盘写IOPS", "format": "cps", "redline": "1000"},
+        # ]
+        metric_list = self.read_metric_config_map('ecs')
         ecs_list = self.load_all()
         print("build success!")
         return self.GenerateEcsDashboard(ecs_list, "line.json.j2", "linePanels.json.j2", metric_list)
-
-
-if __name__ == '__main__':
-    rds = AliyunEcs()
-    rds.action()
