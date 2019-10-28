@@ -61,3 +61,18 @@ Parameter                 	 	| Description                        				| Default
 `build_image.pullPolicy`       	| Image pull policy                  				| `IfNotPresent`
 `ingress.enabled`         		| Whether to open ingress.             				| `false`
 `ingress.hosts`          		| Ingress hosts.                       				| `[]`
+
+## Screenshots
+
+ECS
+![image](docs/image/ecs.jpg)
+
+RDS:
+![image](docs/image/rds.jpg)
+
+EIP:
+![image](docs/image/eip.png)
+
+Redis:
+![image](docs/image/redis.png)
+
