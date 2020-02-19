@@ -2,7 +2,7 @@
 
 replicaCount: 1
 
-plugins: grafana-clock-panel,ryantxu-ajax-panel,farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/aliyun/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana
+plugins: farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/aliyun/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana
 
 access_key_id: ""
 access_secret: ""
