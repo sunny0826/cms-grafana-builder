@@ -44,7 +44,7 @@ def main():
     try:
         access_key_id = base64.b64encode(args.access_key_id.encode("utf-8"))
         access_secret = base64.b64encode(args.access_secret.encode("utf-8"))
-        specs = load_arg(access_key_id, access_secret, args.region_id)
+        specs = load_arg(str(access_key_id), str(access_secret), args.region_id)
         handle_k8s(specs)
         print('Success generating json configuration!')
     except KeyboardInterrupt:
