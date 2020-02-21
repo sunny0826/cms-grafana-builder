@@ -31,7 +31,7 @@ spec:
                   name: cms-secret
             - name: REGION_ID
               value: cn-shanghai
-          image: guoxudongdocker/grafana-build:0.2.0
+          image: guoxudongdocker/grafana-build:0.2.1
           imagePullPolicy: Always
           name: init
       containers:
@@ -39,20 +39,7 @@ spec:
           args:
             - cms
             - run
-          image: guoxudongdocker/grafana-build:0.2.0
-          env:
-          - name: ACCESS_KEY_ID
-            valueFrom:
-              secretKeyRef:
-                name: cms-secret
-                key: accessKeyId
-          - name: ACCESS_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: cms-secret
-                key: accessSecret
-          - name: REGION_ID
-            value: cn-shanghai
+          image: guoxudongdocker/grafana-build:0.2.1
           ports:
             - name: web
               containerPort: 8088
