@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cms-variables
+  labels:
+    app.kubernetes.io/name: cms-variables
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cms-variables
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cms-variables
+    spec:
+      initContainers:
+        - command:
+            - cms
+            - refresh
+          env:
+            - name: ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  key: accessKeyId
+                  name: cms-secret
+            - name: ACCESS_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: accessSecret
+                  name: cms-secret
+            - name: REGION_ID
+              value: cn-shanghai
+          image: guoxudongdocker/grafana-build:0.2.0
+          imagePullPolicy: Always
+          name: init
+      containers:
+        - name: cms-variables
+          args:
+            - cms
+            - run
+          image: guoxudongdocker/grafana-build:0.2.0
+          env:
+          - name: ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: cms-secret
+                key: accessKeyId
+          - name: ACCESS_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: cms-secret
+                key: accessSecret
+          - name: REGION_ID
+            value: cn-shanghai
+          ports:
+            - name: web
+              containerPort: 8088
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: web
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: cms-variables
+  name: cms-variables
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: web
+  selector:
+    app.kubernetes.io/name: cms-variables

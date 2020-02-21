@@ -91,27 +91,28 @@ def get_parser():
         default=getenv('RUN_PORT', 8088),
         help='Runner Port'
     )
-    run_parser.add_argument(
+
+    run_parser.set_defaults(func=runner)
+    refresh_parser = subparsers.add_parser('refresh', help='refresh resource')
+    refresh_parser.set_defaults(func=refresh)
+    refresh_parser.add_argument(
         '--access-key-id',
         type=str,
         default=getenv('ACCESS_KEY_ID', ''),
         help='Aliyun accessKeyId'
     )
-    run_parser.add_argument(
+    refresh_parser.add_argument(
         '--access-secret',
         type=str,
         default=getenv('ACCESS_SECRET', ''),
         help='Aliyun accessSecret'
     )
-    run_parser.add_argument(
+    refresh_parser.add_argument(
         '--region-id',
         type=str,
         default=getenv('REGION_ID', 'cn-shanghai'),
         help='aliyun regionId,default:cn-shanghai'
     )
-    run_parser.set_defaults(func=runner)
-    refresh_parser = subparsers.add_parser('refresh', help='refresh resource')
-    refresh_parser.set_defaults(func=refresh)
 
     return parser
 
