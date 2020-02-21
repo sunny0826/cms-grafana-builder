@@ -14,10 +14,8 @@ spec:
       labels:
         app.kubernetes.io/name: cms-variables
     spec:
-      initContainers:
-        - command:
-            - cms
-            - refresh
+      containers:
+        - name: cms-variables
           env:
             - name: ACCESS_KEY_ID
               valueFrom:
@@ -31,25 +29,16 @@ spec:
                   name: cms-secret
             - name: REGION_ID
               value: cn-shanghai
+          command: ["/bin/sh", "-c", "cms run"]
           image: guoxudongdocker/grafana-build:0.2.1
-          imagePullPolicy: Always
-          name: init
-          volumeMounts:
-            - name: workdir
-              mountPath: "/work-dir"
-      containers:
-        - name: cms-variables
-          command:
-            - cms
-            - run
-          image: guoxudongdocker/grafana-build:0.2.1
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "cms refresh"]
           ports:
             - name: web
               containerPort: 8088
               protocol: TCP
-          volumeMounts:
-            - name: workdir
-              mountPath: /app/db
           readinessProbe:
             httpGet:
               path: /
@@ -61,9 +50,6 @@ spec:
             requests:
               cpu: 100m
               memory: 256Mi
-      volumes:
-        - emptyDir: {}
-          name: workdir
 
 ---
 apiVersion: v1
