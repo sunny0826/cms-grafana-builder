@@ -9,7 +9,7 @@ from variables.aliyun_info import AliyunEcs, AliyunRds, AliyunSlb
 def initDB():
     print("init DB")
     try:
-        conn = sqlite3.connect('cms.db')
+        conn = sqlite3.connect('/app/db/cms.db')
         cursor = conn.cursor()
         cursor.execute('create table if not EXISTS ecs (id varchar(20) primary key, name varchar(20), ip varchar(20))')
         cursor.execute('create table if not EXISTS rds (id varchar(20) primary key, name varchar(20))')
@@ -26,7 +26,7 @@ def initDB():
 
 def refresh_ecs(specs):
     try:
-        conn = sqlite3.connect('cms.db')
+        conn = sqlite3.connect('/app/db/cms.db')
         cursor = conn.cursor()
         ecs = AliyunEcs(specs)
         ecs_list = ecs.load_all()
@@ -43,7 +43,7 @@ def refresh_ecs(specs):
 def refresh_other(product, cls):
     try:
         print('refresh info of {0}'.format(product))
-        conn = sqlite3.connect('cms.db')
+        conn = sqlite3.connect('/app/db/cms.db')
         cursor = conn.cursor()
         client = cls
         plist = client.load_all()

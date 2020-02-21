@@ -31,7 +31,7 @@ def index():
 
 @app.post('/search')
 def search():
-    conn = sqlite3.connect('cms.db')
+    conn = sqlite3.connect('/app/db/cms.db')
     cursor = conn.cursor()
     print(request.json)
     produce_type = request.json['target']

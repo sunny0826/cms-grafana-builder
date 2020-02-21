@@ -34,9 +34,12 @@ spec:
           image: guoxudongdocker/grafana-build:0.2.1
           imagePullPolicy: Always
           name: init
+          volumeMounts:
+            - name: workdir
+              mountPath: "/work-dir"
       containers:
         - name: cms-variables
-          args:
+          command:
             - cms
             - run
           image: guoxudongdocker/grafana-build:0.2.1
@@ -44,6 +47,9 @@ spec:
             - name: web
               containerPort: 8088
               protocol: TCP
+          volumeMounts:
+            - name: workdir
+              mountPath: /app/db
           readinessProbe:
             httpGet:
               path: /
@@ -55,6 +61,9 @@ spec:
             requests:
               cpu: 100m
               memory: 256Mi
+      volumes:
+        - emptyDir: {}
+          name: workdir
 
 ---
 apiVersion: v1
