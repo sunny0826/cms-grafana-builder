@@ -1,0 +1,14 @@
+kind: pipeline
+name: cms-grafana-build
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_user
+    password:
+      from_secret: docker_pass
+    repo: guoxudongdocker/grafana-build
+    tags:
+    - 0.2.0

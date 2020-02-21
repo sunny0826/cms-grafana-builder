@@ -11,9 +11,10 @@ if version_info[:2] < (3, 5):
     )
 
 _NAME = 'cmsbuilder'
+_RUN_NAME = 'cms'
 setup(
     name=_NAME,
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -36,13 +37,16 @@ setup(
         'aliyun-python-sdk-rds==2.3.9',
         'aliyun-python-sdk-slb==3.2.15',
         'aliyun-python-sdk-vpc==3.0.7',
+        'aliyun-python-sdk-dds==2.0.7',
         'demjson==2.2.4',
         'jmespath==0.9.4',
-        'kubernetes'
+        'kubernetes==10.0.1',
+        'bottle==0.12.18',
     ],
     entry_points={
         'console_scripts': [
             '{0} = cli.command:main'.format(_NAME),
+            '{0} = variables.runner:main'.format(_RUN_NAME),
         ]
     }
 )
