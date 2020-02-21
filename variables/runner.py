@@ -48,6 +48,9 @@ def search():
         values = cursor.fetchall()
         body = values[0]
     else:
+        parser = get_parser()
+        args = parser.parse_args()
+        refresh(args)
         cursor.execute('select name from {0}'.format(produce_type))
         values = cursor.fetchall()
         body = []
@@ -63,6 +66,7 @@ def load_arg(accessKeyId, accessSecret, regionId):
 
 
 def refresh(args):
+    print("refresh all")
     initDB()
     specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
     refresh_ecs(specs)
@@ -115,6 +119,7 @@ def get_parser():
     )
 
     return parser
+
 
 def runner(args):
     run(app=app, host='0.0.0.0', port=args.port)
