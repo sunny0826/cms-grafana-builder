@@ -35,7 +35,12 @@ def search():
     cursor = conn.cursor()
     print(request.json)
     produce_type = request.json['target']
-    if produce_type.startswith('ecs_ip('):
+    if produce_type.startswith('num('):
+        sql = 'select count(*) from {0}'.format(re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))[0])
+        cursor.execute(sql)
+        values = cursor.fetchall()
+        body = values[0]
+    elif produce_type.startswith('ecs_ip('):
         cursor.execute('select ip from ecs where name=?',
                        (re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))), )
         values = cursor.fetchall()
@@ -56,12 +61,11 @@ def search():
         print(sql)
         cursor.execute(sql)
         values = cursor.fetchall()
-        str1 = str({"instanceId": values[0][0]})
-        body = [str1]
+        body = [str({"instanceId": values[0][0]})]
     else:
-        parser = get_parser()
-        args = parser.parse_args()
-        refresh(args)
+        # parser = get_parser()
+        # args = parser.parse_args()
+        # refresh(args)
         cursor.execute('select name from {0}'.format(produce_type))
         values = cursor.fetchall()
         body = []
