@@ -40,13 +40,24 @@ def search():
                        (re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))), )
         values = cursor.fetchall()
         body = values[0]
+    elif '((' in produce_type:
+        db_name = produce_type.split('((')[0]
+        names = re.findall(r'[(][(](.*?)[)][)]', produce_type.replace('\\', ''))[0].replace('|', '","')
+        sql = 'select id from {0} where name in ("{1}")'.format(db_name, names)
+        cursor.execute(sql)
+        values = cursor.fetchall()
+        result = []
+        for val in values:
+            result.append('{"instanceId":"' + val[0] + '"}')
+        body = [','.join(result)]
     elif '(' in produce_type:
         sql = 'select id from {0} where name="{1}"'.format(
             produce_type.split('(')[0], re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))[0])
         print(sql)
         cursor.execute(sql)
         values = cursor.fetchall()
-        body = values[0]
+        str1 = str({"instanceId": values[0][0]})
+        body = [str1]
     else:
         parser = get_parser()
         args = parser.parse_args()
@@ -94,6 +105,24 @@ def get_parser():
         type=int,
         default=getenv('RUN_PORT', 8088),
         help='Runner Port'
+    )
+    run_parser.add_argument(
+        '--access-key-id',
+        type=str,
+        default=getenv('ACCESS_KEY_ID', ''),
+        help='Aliyun accessKeyId'
+    )
+    run_parser.add_argument(
+        '--access-secret',
+        type=str,
+        default=getenv('ACCESS_SECRET', ''),
+        help='Aliyun accessSecret'
+    )
+    run_parser.add_argument(
+        '--region-id',
+        type=str,
+        default=getenv('REGION_ID', 'cn-shanghai'),
+        help='aliyun regionId,default:cn-shanghai'
     )
 
     run_parser.set_defaults(func=runner)
