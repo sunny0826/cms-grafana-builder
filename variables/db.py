@@ -55,3 +55,12 @@ def refresh_other(product, cls):
         conn.close()
     except Exception as e:
         print('获取{0}信息失败，{1}'.format(product, e))
+
+def get_instance_name(id):
+    conn = sqlite3.connect('cms.db')
+    cursor = conn.cursor()
+    cursor.execute('select name from ecs where id="{0}"'.format(id))
+    values = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return values[0]

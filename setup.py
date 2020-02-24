@@ -38,6 +38,7 @@ setup(
         'aliyun-python-sdk-slb==3.2.15',
         'aliyun-python-sdk-vpc==3.0.7',
         'aliyun-python-sdk-dds==2.0.7',
+        'aliyun-python-sdk-cms==6.0.13',
         'demjson==2.2.4',
         'jmespath==0.9.4',
         'kubernetes==10.0.1',

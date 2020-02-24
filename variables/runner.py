@@ -9,8 +9,8 @@ from os import getenv
 from aliyunsdkcore.client import AcsClient
 from bottle import (Bottle, HTTPResponse, request, response, json_dumps as dumps, run)
 
-from variables.aliyun_info import AliyunSlb, AliyunRds, AliyunEip, AliyunRedis, AliyunMongoDB
-from variables.db import initDB, refresh_other, refresh_ecs
+from variables.aliyun_info import AliyunSlb, AliyunRds, AliyunEip, AliyunRedis, AliyunMongoDB, MonitorEcsTop
+from variables.db import initDB, refresh_other, refresh_ecs, get_instance_name
 
 app = Bottle()
 
@@ -29,13 +29,24 @@ def index():
     return "UP"
 
 
+@app.route('/refresh', method="GET")
+def refresh():
+    parser = get_parser()
+    args = parser.parse_args()
+    refresh(args)
+    return HTTPResponse(body=dumps(['refresh resource']), headers={'Content-Type': 'application/json'})
+
+
 @app.post('/search')
 def search():
     conn = sqlite3.connect('cms.db')
     cursor = conn.cursor()
     print(request.json)
     produce_type = request.json['target']
-    if produce_type.startswith('num('):
+    if produce_type == '':
+        return HTTPResponse(body=dumps(['cpu_top_10', 'mem_top_10', 'disk_top_10']),
+                            headers={'Content-Type': 'application/json'})
+    elif produce_type.startswith('num('):
         sql = 'select count(*) from {0}'.format(re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))[0])
         cursor.execute(sql)
         values = cursor.fetchall()
@@ -63,9 +74,6 @@ def search():
         values = cursor.fetchall()
         body = [str({"instanceId": values[0][0]})]
     else:
-        # parser = get_parser()
-        # args = parser.parse_args()
-        # refresh(args)
         cursor.execute('select name from {0}'.format(produce_type))
         values = cursor.fetchall()
         body = []
@@ -76,8 +84,53 @@ def search():
     return HTTPResponse(body=dumps(body), headers={'Content-Type': 'application/json'})
 
 
+@app.post('/query')
+def query():
+    print(request.json)
+    body = []
+    parser = get_parser()
+    args = parser.parse_args()
+    specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
+    mon = MonitorEcsTop(specs)
+    for target in request.json['targets']:
+        name = target['target']
+        if name == 'cpu_top_10':
+            cpu_list = mon.query_cpu_top()
+            for i in range(10):
+                if target['refId'] == getChar(i):
+                    datapoints = [[cpu_list[i]['Average'], cpu_list[i]['timestamp']]]
+                    name = get_instance_name(cpu_list[i]['instanceId'])
+                    body.append({'target': name, 'datapoints': datapoints})
+        if name == 'mem_top_10':
+            mem_list = mon.query_mem_top()
+            for i in range(10):
+                if target['refId'] == getChar(i):
+                    datapoints = [[mem_list[i]['Average'], mem_list[i]['timestamp']]]
+                    name = get_instance_name(mem_list[i]['instanceId'])
+                    body.append({'target': name, 'datapoints': datapoints})
+        if name == 'disk_top_10':
+            disk_list = mon.query_disk_top()
+            for i in range(10):
+                if target['refId'] == getChar(i):
+                    datapoints = [[disk_list[i]['Average'], disk_list[i]['timestamp']]]
+                    name = get_instance_name(disk_list[i]['instanceId'])
+                    body.append({'target': name, 'datapoints': datapoints})
+
+    body = dumps(body)
+
+    return HTTPResponse(body=body, headers={'Content-Type': 'application/json'})
+
+
 def load_arg(accessKeyId, accessSecret, regionId):
     return AcsClient(accessKeyId, accessSecret, regionId)
+
+
+def getChar(number):
+    factor, moder = divmod(number, 26)  # 26 字母个数
+    modChar = chr(moder + 65)  # 65 -> 'A'
+    if factor != 0:
+        modChar = getChar(factor - 1) + modChar  # factor - 1 : 商为有效值时起始数为 1 而余数是 0
+    return modChar
 
 
 def refresh(args):

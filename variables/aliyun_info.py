@@ -4,12 +4,13 @@
 import json
 import math
 
+from aliyunsdkcms.request.v20180308.QueryMetricTopRequest import QueryMetricTopRequest
+from aliyunsdkdds.request.v20151201.DescribeDBInstancesRequest import DescribeDBInstancesRequest as MongoDBInstances
 from aliyunsdkecs.request.v20140526.DescribeInstancesRequest import DescribeInstancesRequest
+from aliyunsdkr_kvstore.request.v20150101.DescribeInstancesRequest import DescribeInstancesRequest as RedisInstances
 from aliyunsdkrds.request.v20140815.DescribeDBInstancesRequest import DescribeDBInstancesRequest
 from aliyunsdkslb.request.v20140515.DescribeLoadBalancersRequest import DescribeLoadBalancersRequest
 from aliyunsdkvpc.request.v20160428.DescribeEipAddressesRequest import DescribeEipAddressesRequest
-from aliyunsdkr_kvstore.request.v20150101.DescribeInstancesRequest import DescribeInstancesRequest as RedisInstances
-from aliyunsdkdds.request.v20151201.DescribeDBInstancesRequest import DescribeDBInstancesRequest as MongoDBInstances
 
 
 class AliyunBase(object):
@@ -176,6 +177,7 @@ class AliyunRedis(AliyunBase):
         except Exception as e:
             print('请求阿里云失败，%s', str(e))
 
+
 class AliyunMongoDB(AliyunBase):
 
     def __init__(self, clent):
@@ -203,3 +205,37 @@ class AliyunMongoDB(AliyunBase):
             return mongo_list
         except Exception as e:
             print('请求阿里云失败，%s', str(e))
+
+
+class MonitorEcsTop(object):
+    def __init__(self, clent):
+        self.clent = None
+        self.request = None
+        self.request = QueryMetricTopRequest()
+        self.clent = clent
+        self.request.set_accept_format('json')
+        self.request.set_Project('acs_ecs_dashboard')
+
+    def query_cpu_top(self, ):
+        '''CPU使用率top10监控'''
+        self.request.add_query_param('Metric', 'CPUUtilization')
+        self.request.add_query_param('Orderby', 'Average')
+        response = self.clent.do_action_with_exception(self.request)
+        monitor_list = json.loads(json.loads(response.decode()).get('Datapoints', None))
+        return monitor_list
+
+    def query_mem_top(self, ):
+        '''内存使用率top10监控'''
+        self.request.add_query_param('Metric', 'memory_usedutilization')
+        self.request.add_query_param('Orderby', 'Average')
+        response = self.clent.do_action_with_exception(self.request)
+        monitor_list = json.loads(json.loads(response.decode()).get('Datapoints', None))
+        return monitor_list
+
+    def query_disk_top(self, ):
+        '''磁盘使用率top10监控'''
+        self.request.add_query_param('Metric', 'diskusage_utilization')
+        self.request.add_query_param('Orderby', 'Average')
+        response = self.clent.do_action_with_exception(self.request)
+        monitor_list = json.loads(json.loads(response.decode()).get('Datapoints', None))
+        return monitor_list
