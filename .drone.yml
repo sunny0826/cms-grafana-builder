@@ -11,4 +11,4 @@ steps:
       from_secret: docker_pass
     repo: guoxudongdocker/grafana-build
     tags:
-    - 0.2.prod-${DRONE_BUILD_NUMBER}
+    - 0.2.${DRONE_BUILD_NUMBER}
