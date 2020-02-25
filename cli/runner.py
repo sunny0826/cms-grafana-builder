@@ -9,8 +9,8 @@ from os import getenv
 from aliyunsdkcore.client import AcsClient
 from bottle import (Bottle, HTTPResponse, request, response, json_dumps as dumps, run)
 
-from variables.aliyun_info import AliyunSlb, AliyunRds, AliyunEip, AliyunRedis, AliyunMongoDB, MonitorEcsTop
-from variables.db import initDB, refresh_other, refresh_ecs, get_instance_name
+from cli.aliyun_info import AliyunSlb, AliyunRds, AliyunEip, AliyunRedis, AliyunMongoDB, MonitorEcsTop
+from cli.db import initDB, refresh_other, refresh_ecs, get_instance_name
 
 app = Bottle()
 
@@ -152,7 +152,7 @@ def refresh(args):
 
 def get_parser():
     parser = ArgumentParser(
-        description='CMS Grafana variables runner.',
+        description='CMS Grafana cli runner.',
         prog='runner'
     )
     subparsers = parser.add_subparsers(help='sub-command help')

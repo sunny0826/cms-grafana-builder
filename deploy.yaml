@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cms-variables
+  name: cms-cli
   labels:
     app.kubernetes.io/name: cms-variables
 spec:
@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: cms-variables
     spec:
       containers:
-        - name: cms-variables
+        - name: cms-cli
           env:
             - name: ACCESS_KEY_ID
               valueFrom:
@@ -58,7 +58,7 @@ kind: Service
 metadata:
   labels:
     app.kubernetes.io/name: cms-variables
-  name: cms-variables
+  name: cms-cli
 spec:
   ports:
   - name: http

@@ -1531,7 +1531,7 @@
           "text": "prod-redis",
           "value": "prod-redis"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "redis",
         "hide": 0,
         "includeAll": false,
@@ -1597,7 +1597,7 @@
           "text": "{'instanceId': 'r-uf6f1f646ea15bb4'}",
           "value": "{'instanceId': 'r-uf6f1f646ea15bb4'}"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "redis($name)",
         "hide": 2,
         "includeAll": false,

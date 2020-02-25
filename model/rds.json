@@ -1393,7 +1393,7 @@
           "text": "prod:泛微协同办公系统",
           "value": "prod:泛微协同办公系统"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "rds",
         "hide": 0,
         "includeAll": false,
@@ -1519,7 +1519,7 @@
           "text": "{'instanceId': 'rm-uf67wq194b13n6hx8'}",
           "value": "{'instanceId': 'rm-uf67wq194b13n6hx8'}"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "rds($name)",
         "hide": 2,
         "includeAll": false,

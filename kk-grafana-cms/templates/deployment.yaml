@@ -41,7 +41,10 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.namespace
-        command: ["cmsbuilder"]
+        command: ["/bin/sh", "-c", "cp -r /app/model/* /var/lib/grafana/cms-dashboards"]
+        volumeMounts:
+          - mountPath: /var/lib/grafana/cms-dashboards
+            name: workdir
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
@@ -71,8 +74,10 @@ spec:
           - name: datasource
             mountPath: /etc/grafana/provisioning/datasources/all.yaml
             subPath: all.yaml
-          - name: grafana-dashboards
-            mountPath: /var/lib/grafana/cms-dashboards
+          - name: workdir
+            mountPath: /var/lib/grafana/cms-dashboards/
+{{/*          - name: grafana-dashboards*/}}
+{{/*            mountPath: /var/lib/grafana/cms-dashboards*/}}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
         - args:
@@ -139,10 +144,10 @@ spec:
           defaultMode: 420
           name: grafana-cms-provisionings
         name: grafana-provisionings
-      - configMap:
-          defaultMode: 420
-          name: grafana-cms-dashboards
-        name: grafana-dashboards
+{{/*      - configMap:*/}}
+{{/*          defaultMode: 420*/}}
+{{/*          name: grafana-cms-dashboards*/}}
+{{/*        name: grafana-dashboards*/}}
 
 ---
 apiVersion: apps/v1

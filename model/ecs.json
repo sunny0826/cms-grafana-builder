@@ -3423,7 +3423,7 @@
           "text": "prod:union-即时通讯2",
           "value": "prod:union-即时通讯2"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "ecs",
         "hide": 0,
         "includeAll": false,
@@ -3448,7 +3448,7 @@
           "text": "{'instanceId': 'i-uf62t9fty6zv52bllwu8'}",
           "value": "{'instanceId': 'i-uf62t9fty6zv52bllwu8'}"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "ecs($name)",
         "hide": 2,
         "includeAll": false,
@@ -3505,7 +3505,7 @@
           "text": "192.168.8.156",
           "value": "192.168.8.156"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "ecs_ip($name)",
         "hide": 0,
         "includeAll": false,

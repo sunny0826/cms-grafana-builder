@@ -10,8 +10,7 @@ if version_info[:2] < (3, 5):
         'Unsupported python version %s.' % '.'.join(version_info)
     )
 
-_NAME = 'cmsbuilder'
-_RUN_NAME = 'cms'
+_NAME = 'cms'
 setup(
     name=_NAME,
     version='0.0.2',
@@ -28,8 +27,6 @@ setup(
     author_email='sunnydog0826@gmail.com',
     include_package_data=True,
     install_requires=[
-        'Jinja2==2.10.3',
-        'MarkupSafe==1.1.1',
         'aliyun-python-sdk-core==2.13.10',
         'aliyun-python-sdk-core-v3==2.13.10',
         'aliyun-python-sdk-ecs==4.17.5',
@@ -41,13 +38,11 @@ setup(
         'aliyun-python-sdk-cms==6.0.13',
         'demjson==2.2.4',
         'jmespath==0.9.4',
-        'kubernetes==10.0.1',
         'bottle==0.12.18',
     ],
     entry_points={
         'console_scripts': [
-            '{0} = cli.command:main'.format(_NAME),
-            '{0} = variables.runner:main'.format(_RUN_NAME),
+            '{0} = cli.runner:main'.format(_NAME),
         ]
     }
 )

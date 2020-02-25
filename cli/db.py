@@ -3,7 +3,7 @@
 # Author: guoxudong
 import sqlite3
 
-from variables.aliyun_info import AliyunEcs
+from cli.aliyun_info import AliyunEcs
 
 
 def initDB():

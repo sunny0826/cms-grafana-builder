@@ -434,7 +434,7 @@
           "text": "prod_斑马来拉SLB:47.102.214.135",
           "value": "prod_斑马来拉SLB:47.102.214.135"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "eip",
         "hide": 0,
         "includeAll": false,
@@ -575,7 +575,7 @@
           "text": "{'instanceId': 'eip-uf6k5rl09a9hvwyqqlg91'}",
           "value": "{'instanceId': 'eip-uf6k5rl09a9hvwyqqlg91'}"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "eip($name)",
         "hide": 2,
         "includeAll": false,

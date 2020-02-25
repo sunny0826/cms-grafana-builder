@@ -236,7 +236,7 @@
       "type": "text"
     },
     {
-      "datasource": "cms-variables",
+      "datasource": "Variable DataSource",
       "gridPos": {
         "h": 7,
         "w": 3,
@@ -292,7 +292,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "cms-variables",
+      "datasource": "Variable DataSource",
       "gridPos": {
         "h": 7,
         "w": 3,
@@ -348,7 +348,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "cms-variables",
+      "datasource": "Variable DataSource",
       "gridPos": {
         "h": 7,
         "w": 3,
@@ -404,7 +404,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "cms-variables",
+      "datasource": "Variable DataSource",
       "gridPos": {
         "h": 7,
         "w": 9,
@@ -503,7 +503,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "cms-variables",
+      "datasource": "Variable DataSource",
       "gridPos": {
         "h": 18,
         "w": 3,
@@ -602,7 +602,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "cms-variables",
+      "datasource": "Variable DataSource",
       "gridPos": {
         "h": 18,
         "w": 3,
@@ -1306,7 +1306,7 @@
           "text": "173",
           "value": "173"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(ecs)",
         "hide": 2,
         "includeAll": false,
@@ -1331,7 +1331,7 @@
           "text": "20",
           "value": "20"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(rds)",
         "hide": 2,
         "includeAll": false,
@@ -1356,7 +1356,7 @@
           "text": "23",
           "value": "23"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(slb)",
         "hide": 2,
         "includeAll": false,
@@ -1387,7 +1387,7 @@
           "text": "23",
           "value": "23"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(eip)",
         "hide": 2,
         "includeAll": false,
@@ -1412,7 +1412,7 @@
           "text": "8",
           "value": "8"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(redis)",
         "hide": 2,
         "includeAll": false,
@@ -1437,7 +1437,7 @@
           "text": "8",
           "value": "8"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(mongodb)",
         "hide": 2,
         "includeAll": false,

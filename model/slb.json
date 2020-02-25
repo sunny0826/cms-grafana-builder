@@ -2562,7 +2562,7 @@
           "text": "prod-托管-可用区B",
           "value": "prod-托管-可用区B"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "slb",
         "hide": 0,
         "includeAll": false,
@@ -2587,7 +2587,7 @@
           "text": "{'instanceId': 'lb-uf68s25yg9jq4su5f3zie'}",
           "value": "{'instanceId': 'lb-uf68s25yg9jq4su5f3zie'}"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "slb($name)",
         "hide": 2,
         "includeAll": false,
