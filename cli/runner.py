@@ -217,9 +217,6 @@ def get_parser():
         help='aliyun regionId,default:cn-shanghai'
     )
 
-    init_parser = subparsers.add_parser('init', help='init resource')
-    init_parser.set_defaults(func=init)
-
     return parser
 
 
