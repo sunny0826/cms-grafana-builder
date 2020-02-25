@@ -97,24 +97,21 @@ def query():
         if name == 'cpu_top_10':
             cpu_list = mon.query_cpu_top()
             for i in range(10):
-                if target['refId'] == getChar(i):
-                    datapoints = [[cpu_list[i]['Average'], cpu_list[i]['timestamp']]]
-                    name = get_instance_name(cpu_list[i]['instanceId'])
-                    body.append({'target': name, 'datapoints': datapoints})
+                datapoints = [[cpu_list[i]['Average'], cpu_list[i]['timestamp']]]
+                name = get_instance_name(cpu_list[i]['instanceId'])
+                body.append({'target': name, 'datapoints': datapoints})
         if name == 'mem_top_10':
             mem_list = mon.query_mem_top()
             for i in range(10):
-                if target['refId'] == getChar(i):
-                    datapoints = [[mem_list[i]['Average'], mem_list[i]['timestamp']]]
-                    name = get_instance_name(mem_list[i]['instanceId'])
-                    body.append({'target': name, 'datapoints': datapoints})
+                datapoints = [[mem_list[i]['Average'], mem_list[i]['timestamp']]]
+                name = get_instance_name(mem_list[i]['instanceId'])
+                body.append({'target': name, 'datapoints': datapoints})
         if name == 'disk_top_10':
             disk_list = mon.query_disk_top()
             for i in range(10):
-                if target['refId'] == getChar(i):
-                    datapoints = [[disk_list[i]['Average'], disk_list[i]['timestamp']]]
-                    name = get_instance_name(disk_list[i]['instanceId'])
-                    body.append({'target': name, 'datapoints': datapoints})
+                datapoints = [[disk_list[i]['Average'], disk_list[i]['timestamp']]]
+                name = get_instance_name(disk_list[i]['instanceId'])
+                body.append({'target': name, 'datapoints': datapoints})
 
     body = dumps(body)
 
@@ -123,15 +120,6 @@ def query():
 
 def load_arg(accessKeyId, accessSecret, regionId):
     return AcsClient(accessKeyId, accessSecret, regionId)
-
-
-def getChar(number):
-    factor, moder = divmod(number, 26)  # 26 字母个数
-    modChar = chr(moder + 65)  # 65 -> 'A'
-    if factor != 0:
-        modChar = getChar(factor - 1) + modChar  # factor - 1 : 商为有效值时起始数为 1 而余数是 0
-    return modChar
-
 
 def refresh(args):
     print("refresh all")
