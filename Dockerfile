@@ -8,4 +8,4 @@ COPY model /var/local/model
 
 RUN pip3 install /app
 
-ENTRYPOINT ["cmsbuilder"]
+ENTRYPOINT ["uwsgi","--ini","uwsgi.ini"]
