@@ -4,6 +4,9 @@ name: cms-grafana-build
 steps:
 - name: publish
   image: registry-vpc.cn-shanghai.aliyuncs.com/keking/docker
+  volumes:
+    - name: docker
+      path: /var/run/docker.sock
   settings:
     username:
       from_secret: docker_user
@@ -13,3 +16,8 @@ steps:
     registry: registry-vpc.cn-shanghai.aliyuncs.com
     tags:
     - 0.2.${DRONE_BUILD_NUMBER}
+
+volumes:
+- name: docker
+  host:
+    path: /var/run/docker.sock
