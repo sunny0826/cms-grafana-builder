@@ -31,7 +31,9 @@ def index():
 
 @app.route('/refresh', method="GET")
 def get_refresh():
-    refresh()
+    parser = get_parser()
+    args = parser.parse_args()
+    refresh(args)
     return HTTPResponse(body=dumps(['refresh resource']), headers={'Content-Type': 'application/json'})
 
 
@@ -143,9 +145,7 @@ def load_arg(accessKeyId, accessSecret, regionId):
     return AcsClient(accessKeyId, accessSecret, regionId)
 
 
-def refresh():
-    parser = get_parser()
-    args = parser.parse_args()
+def refresh(args):
     print("refresh all")
     initDB()
     specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
