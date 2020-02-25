@@ -3,12 +3,13 @@ name: cms-grafana-build
 
 steps:
 - name: publish
-  image: plugins/docker
+  image: registry-vpc.cn-shanghai.aliyuncs.com/keking/docker
   settings:
     username:
       from_secret: docker_user
     password:
       from_secret: docker_pass
     repo: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
+    registry: registry-vpc.cn-shanghai.aliyuncs.com
     tags:
     - 0.2.${DRONE_BUILD_NUMBER}
