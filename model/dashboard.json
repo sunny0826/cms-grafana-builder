@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 13,
-  "iteration": 1582535335249,
+  "iteration": 1582625096990,
   "links": [],
   "panels": [
     {
@@ -281,7 +280,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "cpu_top_10",
+          "target": "cpu_top",
           "type": "timeserie"
         }
       ],
@@ -337,7 +336,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "mem_top_10",
+          "target": "mem_top",
           "type": "timeserie"
         }
       ],
@@ -393,7 +392,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "disk_top_10",
+          "target": "disk_top",
           "type": "timeserie"
         }
       ],
@@ -450,51 +449,6 @@
           "refId": "A",
           "target": "disk_top_10",
           "type": "timeserie"
-        },
-        {
-          "refId": "B",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "C",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "D",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "E",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "F",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "G",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "H",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "I",
-          "target": "disk_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "J",
-          "target": "disk_top_10",
-          "type": "timeserie"
         }
       ],
       "timeFrom": null,
@@ -549,51 +503,6 @@
           "refId": "A",
           "target": "cpu_top_10",
           "type": "timeserie"
-        },
-        {
-          "refId": "B",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "C",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "D",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "E",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "F",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "G",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "H",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "I",
-          "target": "cpu_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "J",
-          "target": "cpu_top_10",
-          "type": "timeserie"
         }
       ],
       "timeFrom": null,
@@ -646,51 +555,6 @@
       "targets": [
         {
           "refId": "A",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "B",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "C",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "D",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "E",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "F",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "G",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "H",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "I",
-          "target": "mem_top_10",
-          "type": "timeserie"
-        },
-        {
-          "refId": "J",
           "target": "mem_top_10",
           "type": "timeserie"
         }
@@ -1479,5 +1343,5 @@
   "timezone": "",
   "title": "Dashboard",
   "uid": "796J6jQZk",
-  "version": 6
+  "version": 1
 }

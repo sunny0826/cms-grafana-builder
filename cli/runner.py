@@ -44,7 +44,7 @@ def search():
     print(request.json)
     produce_type = request.json['target']
     if produce_type == '':
-        return HTTPResponse(body=dumps(['cpu_top_10', 'mem_top_10', 'disk_top_10']),
+        return HTTPResponse(body=dumps(['cpu_top_10', 'mem_top_10', 'disk_top_10', 'cpu_top', 'mem_top', 'disk_top']),
                             headers={'Content-Type': 'application/json'})
     elif produce_type.startswith('num('):
         sql = 'select count(*) from {0}'.format(re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))[0])
@@ -135,6 +135,7 @@ def query():
 
 def load_arg(accessKeyId, accessSecret, regionId):
     return AcsClient(accessKeyId, accessSecret, regionId)
+
 
 def refresh(args):
     print("refresh all")
