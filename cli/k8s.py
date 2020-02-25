@@ -21,7 +21,7 @@ def handle_k8s():
 
 def generate_config_map():
     config_map_dict = {}
-    for root, dirs, files in os.walk("../model"):
+    for root, dirs, files in os.walk("/var/local/model"):
         for file in files:
             # with open("/var/local/model/{0}".format(filename), "r") as fd:
             with open(os.path.join(root, file), "r") as fd:

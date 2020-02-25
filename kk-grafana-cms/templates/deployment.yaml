@@ -16,7 +16,7 @@ spec:
         app.kubernetes.io/name: {{ include "kk-grafana-cms.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ .Chart.Name }}-sa
+      serviceAccountName: {{ template "kk-grafana-cms.fullname" . }}-sa
       imagePullSecrets:
       - name: registry-pull-secret
       initContainers:
@@ -27,12 +27,12 @@ spec:
         - name: ACCESS_KEY_ID
           valueFrom:
             secretKeyRef:
-              name: cms-secret
+              name: {{ template "cms-secret.fullname" . }}
               key: accessKeyId
         - name: ACCESS_SECRET
           valueFrom:
             secretKeyRef:
-              name: cms-secret
+              name: {{ template "cms-secret.fullname" . }}
               key: accessSecret
         - name: REGION_ID
           value: {{ .Values.region_id }}
@@ -116,14 +116,14 @@ spec:
         name: grafana-storage
       - name: datasource
         secret:
-          secretName: cms-secret
+          secretName: {{ template "cms-secret.fullname" . }}
           items:
           - key: datasources.yaml
             path: all.yaml
             mode: 511
       - name: pass
         secret:
-          secretName: cms-secret
+          secretName: {{ template "cms-secret.fullname" . }}
           items:
           - key: adminPass
             path: secrets/admin_password

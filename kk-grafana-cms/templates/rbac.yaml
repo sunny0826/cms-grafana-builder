@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: {{ .Chart.Name }}-sa
+  name: {{ template "kk-grafana-cms.fullname" . }}-sa
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ .Chart.Name }}-cr
+  name: {{ template "kk-grafana-cms.fullname" . }}-cr
 rules:
   - apiGroups: [""]
     resources: ["secrets", "configmaps"]
@@ -18,26 +18,26 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{.Chart.Name }}-crb
+  name: {{ template "kk-grafana-cms.fullname" . }}-crb
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ .Chart.Name }}-cr
+  name: {{ template "kk-grafana-cms.fullname" . }}-cr
 subjects:
   - kind: ServiceAccount
-    name: {{ .Chart.Name }}-sa
+    name: {{ template "kk-grafana-cms.fullname" . }}-sa
     namespace: {{.Release.Namespace }}
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: {{ .Chart.Name }}-view
+  name: {{ template "kk-grafana-cms.fullname" . }}-view
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ .Chart.Name }}-cr
+  name: {{ template "kk-grafana-cms.fullname" . }}-cr
 subjects:
   - kind: ServiceAccount
-    name: {{ .Chart.Name }}-sa
+    name: {{ template "kk-grafana-cms.fullname" . }}-sa
     namespace: {{.Release.Namespace }}
