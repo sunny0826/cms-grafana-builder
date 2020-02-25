@@ -17,6 +17,14 @@ data:
        options:
          path: /var/lib/grafana/cms-dashboards
 
+     - name: CMS_VARIABLE
+       orgId: 1
+       folder: ''
+       type: file
+       updateIntervalSeconds: 3600
+       options:
+         path: /var/lib/grafana/var-dashboards
+
 ---
 apiVersion: v1
 kind: ConfigMap

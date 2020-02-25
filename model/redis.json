@@ -1,0 +1,2266 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 11,
+  "iteration": 1582522533907,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "panels": [],
+      "repeat": "name",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "title": "概览",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 80
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ],
+            "unit": "percent"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.4.2",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardCpuUsage",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU使用率",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 12,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 80
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ],
+            "unit": "percent"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.4.2",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardMemoryUsage",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "内存使用率",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 19,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 80
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ],
+            "unit": "percent"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.4.2",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardQPSUsage",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "QPS使用率",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 11,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 80
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ],
+            "unit": "percent"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.4.2",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardIntranetOutRatio",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "流出带宽使用率",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 21,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 80
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ],
+            "unit": "percent"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.4.2",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardIntranetOutRatio",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "流出带宽使用率",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "µs",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 7,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "平均响应时间",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardAvgRt",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 5
+      },
+      "id": 23,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "缓存内Key数量",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardKeys",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 4,
+      "panels": [],
+      "repeat": "name",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "title": "趋势",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 17,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardCpuUsage",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU使用率",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 10
+      },
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardMemoryUsage",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "内存使用率",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 18
+      },
+      "id": 25,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "$cmd",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "$cmd 命令的执行频率",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "cps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 18
+      },
+      "id": 24,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardKeys",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "缓存内Key数量",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 26
+      },
+      "id": 5,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.4.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardConnectionUsage",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "连接数使用率",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 26
+      },
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardAvgRt",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "µs",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 34
+      },
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.4.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardIntranetInRatio",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "流入带宽使用率",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 34
+      },
+      "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.4.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "scopedVars": {
+        "name": {
+          "selected": true,
+          "text": "prod-redis",
+          "value": "prod-redis"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "StandardIntranetOutRatio",
+          "period": "60",
+          "project": "acs_kvstore",
+          "refId": "A",
+          "target": [
+            "Average"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Average"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "流出带宽使用率",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 20,
+  "style": "dark",
+  "tags": [
+    "redis",
+    "阿里云"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "prod-redis",
+          "value": "prod-redis"
+        },
+        "datasource": "cms-variables",
+        "definition": "redis",
+        "hide": 0,
+        "includeAll": false,
+        "label": "实例名称",
+        "multi": false,
+        "name": "name",
+        "options": [
+          {
+            "selected": false,
+            "text": "prod:union-斑马",
+            "value": "prod:union-斑马"
+          },
+          {
+            "selected": false,
+            "text": "prod-Liquidation",
+            "value": "prod-Liquidation"
+          },
+          {
+            "selected": false,
+            "text": "prod:中原系统",
+            "value": "prod:中原系统"
+          },
+          {
+            "selected": false,
+            "text": "prod-wuliuyun-redis",
+            "value": "prod-wuliuyun-redis"
+          },
+          {
+            "selected": false,
+            "text": "uat-redis",
+            "value": "uat-redis"
+          },
+          {
+            "selected": false,
+            "text": "prod-DubboRegisterCenter",
+            "value": "prod-DubboRegisterCenter"
+          },
+          {
+            "selected": false,
+            "text": "prod-hefei",
+            "value": "prod-hefei"
+          },
+          {
+            "selected": true,
+            "text": "prod-redis",
+            "value": "prod-redis"
+          }
+        ],
+        "query": "redis",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "{'instanceId': 'r-uf6f1f646ea15bb4'}",
+          "value": "{'instanceId': 'r-uf6f1f646ea15bb4'}"
+        },
+        "datasource": "cms-variables",
+        "definition": "redis($name)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "id",
+        "options": [],
+        "query": "redis($name)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "Standardhgetall",
+          "value": "Standardhgetall"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "命令",
+        "multi": false,
+        "name": "cmd",
+        "options": [
+          {
+            "selected": false,
+            "text": "Standardappend",
+            "value": "Standardappend"
+          },
+          {
+            "selected": false,
+            "text": "Standardbitcount",
+            "value": "Standardbitcount"
+          },
+          {
+            "selected": false,
+            "text": "Standardbitop",
+            "value": "Standardbitop"
+          },
+          {
+            "selected": false,
+            "text": "Standardblpop",
+            "value": "Standardblpop"
+          },
+          {
+            "selected": false,
+            "text": "Standardbrpop",
+            "value": "Standardbrpop"
+          },
+          {
+            "selected": false,
+            "text": "Standardbrpoplpush",
+            "value": "Standardbrpoplpush"
+          },
+          {
+            "selected": false,
+            "text": "Standarddecr",
+            "value": "Standarddecr"
+          },
+          {
+            "selected": false,
+            "text": "Standarddecrby",
+            "value": "Standarddecrby"
+          },
+          {
+            "selected": false,
+            "text": "Standarddel",
+            "value": "Standarddel"
+          },
+          {
+            "selected": false,
+            "text": "Standarddiscard",
+            "value": "Standarddiscard"
+          },
+          {
+            "selected": false,
+            "text": "Standarddump",
+            "value": "Standarddump"
+          },
+          {
+            "selected": false,
+            "text": "Standardexec",
+            "value": "Standardexec"
+          },
+          {
+            "selected": false,
+            "text": "Standardexists",
+            "value": "Standardexists"
+          },
+          {
+            "selected": false,
+            "text": "Standardexpire",
+            "value": "Standardexpire"
+          },
+          {
+            "selected": false,
+            "text": "Standardexpireat",
+            "value": "Standardexpireat"
+          },
+          {
+            "selected": false,
+            "text": "StandardFailedCount",
+            "value": "StandardFailedCount"
+          },
+          {
+            "selected": false,
+            "text": "Standardget",
+            "value": "Standardget"
+          },
+          {
+            "selected": false,
+            "text": "Standardgetbit",
+            "value": "Standardgetbit"
+          },
+          {
+            "selected": false,
+            "text": "Standardgetrange",
+            "value": "Standardgetrange"
+          },
+          {
+            "selected": false,
+            "text": "Standardgetset",
+            "value": "Standardgetset"
+          },
+          {
+            "selected": false,
+            "text": "Standardhdel",
+            "value": "Standardhdel"
+          },
+          {
+            "selected": false,
+            "text": "Standardhexists",
+            "value": "Standardhexists"
+          },
+          {
+            "selected": false,
+            "text": "Standardhget",
+            "value": "Standardhget"
+          },
+          {
+            "selected": true,
+            "text": "Standardhgetall",
+            "value": "Standardhgetall"
+          },
+          {
+            "selected": false,
+            "text": "Standardhincrby",
+            "value": "Standardhincrby"
+          },
+          {
+            "selected": false,
+            "text": "Standardhincrbyfloat",
+            "value": "Standardhincrbyfloat"
+          },
+          {
+            "selected": false,
+            "text": "Standardhkeys",
+            "value": "Standardhkeys"
+          },
+          {
+            "selected": false,
+            "text": "Standardhlen",
+            "value": "Standardhlen"
+          },
+          {
+            "selected": false,
+            "text": "Standardhmget",
+            "value": "Standardhmget"
+          },
+          {
+            "selected": false,
+            "text": "Standardhmset",
+            "value": "Standardhmset"
+          },
+          {
+            "selected": false,
+            "text": "Standardhscan",
+            "value": "Standardhscan"
+          },
+          {
+            "selected": false,
+            "text": "Standardhset",
+            "value": "Standardhset"
+          },
+          {
+            "selected": false,
+            "text": "Standardhsetnx",
+            "value": "Standardhsetnx"
+          },
+          {
+            "selected": false,
+            "text": "Standardhvals",
+            "value": "Standardhvals"
+          },
+          {
+            "selected": false,
+            "text": "Standardincr",
+            "value": "Standardincr"
+          },
+          {
+            "selected": false,
+            "text": "Standardincrby",
+            "value": "Standardincrby"
+          },
+          {
+            "selected": false,
+            "text": "Standardincrbyfloat",
+            "value": "Standardincrbyfloat"
+          },
+          {
+            "selected": false,
+            "text": "Standardlindex",
+            "value": "Standardlindex"
+          },
+          {
+            "selected": false,
+            "text": "Standardlinsert",
+            "value": "Standardlinsert"
+          },
+          {
+            "selected": false,
+            "text": "Standardllen",
+            "value": "Standardllen"
+          },
+          {
+            "selected": false,
+            "text": "Standardlpop",
+            "value": "Standardlpop"
+          },
+          {
+            "selected": false,
+            "text": "Standardlpush",
+            "value": "Standardlpush"
+          },
+          {
+            "selected": false,
+            "text": "Standardlpushx",
+            "value": "Standardlpushx"
+          },
+          {
+            "selected": false,
+            "text": "Standardlrange",
+            "value": "Standardlrange"
+          },
+          {
+            "selected": false,
+            "text": "Standardlrem",
+            "value": "Standardlrem"
+          },
+          {
+            "selected": false,
+            "text": "Standardlset",
+            "value": "Standardlset"
+          },
+          {
+            "selected": false,
+            "text": "Standardltrim",
+            "value": "Standardltrim"
+          },
+          {
+            "selected": false,
+            "text": "Standardmget",
+            "value": "Standardmget"
+          },
+          {
+            "selected": false,
+            "text": "Standardmove",
+            "value": "Standardmove"
+          },
+          {
+            "selected": false,
+            "text": "Standardmset",
+            "value": "Standardmset"
+          },
+          {
+            "selected": false,
+            "text": "Standardmsetnx",
+            "value": "Standardmsetnx"
+          },
+          {
+            "selected": false,
+            "text": "Standardmulti",
+            "value": "Standardmulti"
+          },
+          {
+            "selected": false,
+            "text": "Standardpersist",
+            "value": "Standardpersist"
+          },
+          {
+            "selected": false,
+            "text": "Standardpexpire",
+            "value": "Standardpexpire"
+          },
+          {
+            "selected": false,
+            "text": "Standardpexpireat",
+            "value": "Standardpexpireat"
+          },
+          {
+            "selected": false,
+            "text": "Standardpfadd",
+            "value": "Standardpfadd"
+          },
+          {
+            "selected": false,
+            "text": "Standardpfcount",
+            "value": "Standardpfcount"
+          },
+          {
+            "selected": false,
+            "text": "Standardpfmerge",
+            "value": "Standardpfmerge"
+          },
+          {
+            "selected": false,
+            "text": "Standardpsetex",
+            "value": "Standardpsetex"
+          },
+          {
+            "selected": false,
+            "text": "Standardpsubscribe",
+            "value": "Standardpsubscribe"
+          },
+          {
+            "selected": false,
+            "text": "Standardpttl",
+            "value": "Standardpttl"
+          },
+          {
+            "selected": false,
+            "text": "Standardpublish",
+            "value": "Standardpublish"
+          },
+          {
+            "selected": false,
+            "text": "Standardpubsub",
+            "value": "Standardpubsub"
+          },
+          {
+            "selected": false,
+            "text": "Standardpunsubscribe",
+            "value": "Standardpunsubscribe"
+          },
+          {
+            "selected": false,
+            "text": "Standardrandomkey",
+            "value": "Standardrandomkey"
+          },
+          {
+            "selected": false,
+            "text": "Standardrename",
+            "value": "Standardrename"
+          },
+          {
+            "selected": false,
+            "text": "Standardrenamenx",
+            "value": "Standardrenamenx"
+          },
+          {
+            "selected": false,
+            "text": "Standardrestore",
+            "value": "Standardrestore"
+          },
+          {
+            "selected": false,
+            "text": "Standardrpop",
+            "value": "Standardrpop"
+          },
+          {
+            "selected": false,
+            "text": "Standardrpoplpush",
+            "value": "Standardrpoplpush"
+          },
+          {
+            "selected": false,
+            "text": "Standardrpush",
+            "value": "Standardrpush"
+          },
+          {
+            "selected": false,
+            "text": "Standardrpushx",
+            "value": "Standardrpushx"
+          },
+          {
+            "selected": false,
+            "text": "Standardsadd",
+            "value": "Standardsadd"
+          },
+          {
+            "selected": false,
+            "text": "Standardscan",
+            "value": "Standardscan"
+          },
+          {
+            "selected": false,
+            "text": "Standardscard",
+            "value": "Standardscard"
+          },
+          {
+            "selected": false,
+            "text": "Standardsdiff",
+            "value": "Standardsdiff"
+          },
+          {
+            "selected": false,
+            "text": "Standardsdiffstore",
+            "value": "Standardsdiffstore"
+          },
+          {
+            "selected": false,
+            "text": "Standardset",
+            "value": "Standardset"
+          },
+          {
+            "selected": false,
+            "text": "Standardsetbit",
+            "value": "Standardsetbit"
+          },
+          {
+            "selected": false,
+            "text": "Standardsetex",
+            "value": "Standardsetex"
+          },
+          {
+            "selected": false,
+            "text": "Standardsetnx",
+            "value": "Standardsetnx"
+          },
+          {
+            "selected": false,
+            "text": "Standardsetrange",
+            "value": "Standardsetrange"
+          },
+          {
+            "selected": false,
+            "text": "Standardsinter",
+            "value": "Standardsinter"
+          },
+          {
+            "selected": false,
+            "text": "Standardsinterstore",
+            "value": "Standardsinterstore"
+          },
+          {
+            "selected": false,
+            "text": "Standardsismember",
+            "value": "Standardsismember"
+          },
+          {
+            "selected": false,
+            "text": "Standardsmembers",
+            "value": "Standardsmembers"
+          },
+          {
+            "selected": false,
+            "text": "Standardsmove",
+            "value": "Standardsmove"
+          },
+          {
+            "selected": false,
+            "text": "Standardsort",
+            "value": "Standardsort"
+          },
+          {
+            "selected": false,
+            "text": "Standardspop",
+            "value": "Standardspop"
+          },
+          {
+            "selected": false,
+            "text": "Standardsrandmember",
+            "value": "Standardsrandmember"
+          },
+          {
+            "selected": false,
+            "text": "Standardsrem",
+            "value": "Standardsrem"
+          },
+          {
+            "selected": false,
+            "text": "Standardsscan",
+            "value": "Standardsscan"
+          },
+          {
+            "selected": false,
+            "text": "Standardstrlen",
+            "value": "Standardstrlen"
+          },
+          {
+            "selected": false,
+            "text": "Standardsubscribe",
+            "value": "Standardsubscribe"
+          },
+          {
+            "selected": false,
+            "text": "Standardsunion",
+            "value": "Standardsunion"
+          },
+          {
+            "selected": false,
+            "text": "Standardsunionstore",
+            "value": "Standardsunionstore"
+          },
+          {
+            "selected": false,
+            "text": "Standardttl",
+            "value": "Standardttl"
+          },
+          {
+            "selected": false,
+            "text": "Standardtype",
+            "value": "Standardtype"
+          },
+          {
+            "selected": false,
+            "text": "Standardunsubscribe",
+            "value": "Standardunsubscribe"
+          },
+          {
+            "selected": false,
+            "text": "Standardunwatch",
+            "value": "Standardunwatch"
+          },
+          {
+            "selected": false,
+            "text": "Standardwatch",
+            "value": "Standardwatch"
+          },
+          {
+            "selected": false,
+            "text": "Standardzadd",
+            "value": "Standardzadd"
+          },
+          {
+            "selected": false,
+            "text": "Standardzcard",
+            "value": "Standardzcard"
+          },
+          {
+            "selected": false,
+            "text": "Standardzcount",
+            "value": "Standardzcount"
+          },
+          {
+            "selected": false,
+            "text": "Standardzincrby",
+            "value": "Standardzincrby"
+          },
+          {
+            "selected": false,
+            "text": "Standardzinterstore",
+            "value": "Standardzinterstore"
+          },
+          {
+            "selected": false,
+            "text": "Standardzlexcount",
+            "value": "Standardzlexcount"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrange",
+            "value": "Standardzrange"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrangebylex",
+            "value": "Standardzrangebylex"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrangebyscore",
+            "value": "Standardzrangebyscore"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrank",
+            "value": "Standardzrank"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrem",
+            "value": "Standardzrem"
+          },
+          {
+            "selected": false,
+            "text": "Standardzremrangebylex",
+            "value": "Standardzremrangebylex"
+          },
+          {
+            "selected": false,
+            "text": "Standardzremrangebyrank",
+            "value": "Standardzremrangebyrank"
+          },
+          {
+            "selected": false,
+            "text": "Standardzremrangebyscore",
+            "value": "Standardzremrangebyscore"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrevrange",
+            "value": "Standardzrevrange"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrevrangebyscore",
+            "value": "Standardzrevrangebyscore"
+          },
+          {
+            "selected": false,
+            "text": "Standardzrevrank",
+            "value": "Standardzrevrank"
+          },
+          {
+            "selected": false,
+            "text": "Standardzscan",
+            "value": "Standardzscan"
+          },
+          {
+            "selected": false,
+            "text": "Standardzscore",
+            "value": "Standardzscore"
+          },
+          {
+            "selected": false,
+            "text": "Standardzunionstore",
+            "value": "Standardzunionstore"
+          }
+        ],
+        "query": "Standardappend,Standardbitcount,Standardbitop,Standardblpop,Standardbrpop,Standardbrpoplpush,Standarddecr,Standarddecrby,Standarddel,Standarddiscard,Standarddump,Standardexec,Standardexists,Standardexpire,Standardexpireat,StandardFailedCount,Standardget,Standardgetbit,Standardgetrange,Standardgetset,Standardhdel,Standardhexists,Standardhget,Standardhgetall,Standardhincrby,Standardhincrbyfloat,Standardhkeys,Standardhlen,Standardhmget,Standardhmset,Standardhscan,Standardhset,Standardhsetnx,Standardhvals,Standardincr,Standardincrby,Standardincrbyfloat,Standardlindex,Standardlinsert,Standardllen,Standardlpop,Standardlpush,Standardlpushx,Standardlrange,Standardlrem,Standardlset,Standardltrim,Standardmget,Standardmove,Standardmset,Standardmsetnx,Standardmulti,Standardpersist,Standardpexpire,Standardpexpireat,Standardpfadd,Standardpfcount,Standardpfmerge,Standardpsetex,Standardpsubscribe,Standardpttl,Standardpublish,Standardpubsub,Standardpunsubscribe,Standardrandomkey,Standardrename,Standardrenamenx,Standardrestore,Standardrpop,Standardrpoplpush,Standardrpush,Standardrpushx,Standardsadd,Standardscan,Standardscard,Standardsdiff,Standardsdiffstore,Standardset,Standardsetbit,Standardsetex,Standardsetnx,Standardsetrange,Standardsinter,Standardsinterstore,Standardsismember,Standardsmembers,Standardsmove,Standardsort,Standardspop,Standardsrandmember,Standardsrem,Standardsscan,Standardstrlen,Standardsubscribe,Standardsunion,Standardsunionstore,Standardttl,Standardtype,Standardunsubscribe,Standardunwatch,Standardwatch,Standardzadd,Standardzcard,Standardzcount,Standardzincrby,Standardzinterstore,Standardzlexcount,Standardzrange,Standardzrangebylex,Standardzrangebyscore,Standardzrank,Standardzrem,Standardzremrangebylex,Standardzremrangebyrank,Standardzremrangebyscore,Standardzrevrange,Standardzrevrangebyscore,Standardzrevrank,Standardzscan,Standardzscore,Standardzunionstore",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Redis 监控",
+  "uid": "Z6-V-jwWz",
+  "version": 1
+}

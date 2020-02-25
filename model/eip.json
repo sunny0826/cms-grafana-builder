@@ -1,0 +1,621 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 10,
+  "iteration": 1582522554567,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 2,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "net_tx.rate",
+          "period": "60",
+          "project": "acs_vpc_eip",
+          "refId": "A",
+          "target": [
+            "Value"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Value"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "流出带宽",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 2,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 3,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "net_rx.rate",
+          "period": "60",
+          "project": "acs_vpc_eip",
+          "refId": "A",
+          "target": [
+            "Value"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Value"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "流入带宽",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 2,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "net_txPkgs.rate",
+          "period": "60",
+          "project": "acs_vpc_eip",
+          "refId": "A",
+          "target": [
+            "Value"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Value"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "每秒流出数据包数",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "cps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 2,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 5,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [
+            "$id"
+          ],
+          "group": "",
+          "metric": "net_rxPkgs.rate",
+          "period": "60",
+          "project": "acs_vpc_eip",
+          "refId": "A",
+          "target": [
+            "Value"
+          ],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": [
+            "Value"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "每秒流入数据包数",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "cps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 20,
+  "style": "dark",
+  "tags": [
+    "EIP",
+    "阿里云"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "prod_斑马来拉SLB:47.102.214.135",
+          "value": "prod_斑马来拉SLB:47.102.214.135"
+        },
+        "datasource": "cms-variables",
+        "definition": "eip",
+        "hide": 0,
+        "includeAll": false,
+        "label": "实例名称",
+        "multi": true,
+        "name": "name",
+        "options": [
+          {
+            "selected": true,
+            "text": "prod_斑马来拉SLB:47.102.214.135",
+            "value": "prod_斑马来拉SLB:47.102.214.135"
+          },
+          {
+            "selected": false,
+            "text": "prod-openvpn:47.103.206.141",
+            "value": "prod-openvpn:47.103.206.141"
+          },
+          {
+            "selected": false,
+            "text": "prod:k8s-union入口:139.224.110.209",
+            "value": "prod:k8s-union入口:139.224.110.209"
+          },
+          {
+            "selected": false,
+            "text": "prod-斑马-k8s-apiservice:106.15.95.232",
+            "value": "prod-斑马-k8s-apiservice:106.15.95.232"
+          },
+          {
+            "selected": false,
+            "text": "托管:k8s-SLB-访问控制:47.103.142.223",
+            "value": "托管:k8s-SLB-访问控制:47.103.142.223"
+          },
+          {
+            "selected": false,
+            "text": "prod:托管集群:47.102.129.40",
+            "value": "prod:托管集群:47.102.129.40"
+          },
+          {
+            "selected": false,
+            "text": "prod-托管-APIServer:47.103.75.44",
+            "value": "prod-托管-APIServer:47.103.75.44"
+          },
+          {
+            "selected": false,
+            "text": "prod:中原系统:47.103.103.75",
+            "value": "prod:中原系统:47.103.103.75"
+          },
+          {
+            "selected": false,
+            "text": "devops-k8s-入口:47.101.58.216",
+            "value": "devops-k8s-入口:47.101.58.216"
+          },
+          {
+            "selected": false,
+            "text": "devops-k8s-APIServer:47.102.154.52",
+            "value": "devops-k8s-APIServer:47.102.154.52"
+          },
+          {
+            "selected": false,
+            "text": "k8s-test入口-访问控制:47.101.70.132",
+            "value": "k8s-test入口-访问控制:47.101.70.132"
+          },
+          {
+            "selected": false,
+            "text": "k8s-test入口-pub:106.14.225.218",
+            "value": "k8s-test入口-pub:106.14.225.218"
+          },
+          {
+            "selected": false,
+            "text": "ECS_Rancher:47.100.239.249",
+            "value": "ECS_Rancher:47.100.239.249"
+          },
+          {
+            "selected": false,
+            "text": "UAT-集群出口-NAT:106.14.147.51",
+            "value": "UAT-集群出口-NAT:106.14.147.51"
+          },
+          {
+            "selected": false,
+            "text": "SLB_UAT-服务网关2:106.15.201.228",
+            "value": "SLB_UAT-服务网关2:106.15.201.228"
+          },
+          {
+            "selected": false,
+            "text": "SLB_prod-前端:47.100.183.220",
+            "value": "SLB_prod-前端:47.100.183.220"
+          },
+          {
+            "selected": false,
+            "text": "UAT-SLB-服务网关1:47.100.254.3",
+            "value": "UAT-SLB-服务网关1:47.100.254.3"
+          },
+          {
+            "selected": false,
+            "text": "devops-出口-NAT:47.100.243.17",
+            "value": "devops-出口-NAT:47.100.243.17"
+          },
+          {
+            "selected": false,
+            "text": "devops-SLB-入口:47.100.171.18",
+            "value": "devops-SLB-入口:47.100.171.18"
+          },
+          {
+            "selected": false,
+            "text": "生产环境-APPTMS:139.224.133.91",
+            "value": "生产环境-APPTMS:139.224.133.91"
+          },
+          {
+            "selected": false,
+            "text": "生产环境-SLB:106.15.94.2",
+            "value": "生产环境-SLB:106.15.94.2"
+          },
+          {
+            "selected": false,
+            "text": "NAT-UAT环境出口:106.15.178.42",
+            "value": "NAT-UAT环境出口:106.15.178.42"
+          },
+          {
+            "selected": false,
+            "text": "生产环境-出口-NAT:47.100.171.223",
+            "value": "生产环境-出口-NAT:47.100.171.223"
+          }
+        ],
+        "query": "eip",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "{'instanceId': 'eip-uf6k5rl09a9hvwyqqlg91'}",
+          "value": "{'instanceId': 'eip-uf6k5rl09a9hvwyqqlg91'}"
+        },
+        "datasource": "cms-variables",
+        "definition": "eip($name)",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "id",
+        "options": [],
+        "query": "eip($name)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "弹性公网IP",
+  "uid": "LV6CA-QWk",
+  "version": 7
+}

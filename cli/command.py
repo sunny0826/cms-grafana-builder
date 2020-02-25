@@ -41,8 +41,8 @@ def main():
     )
     args = parser.parse_args()
     try:
-        specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
-        handle_k8s(specs)
+        # specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
+        handle_k8s()
         print('Success generating json configuration!')
     except KeyboardInterrupt:
         pass

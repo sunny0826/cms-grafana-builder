@@ -1,46 +1,30 @@
 #!/usr/bin/env python
 # encoding: utf-8
 # Author: guoxudong
+import json
+import os
 from os import getenv
 
 from kubernetes import client, config
 
-from cli.aliyun_ecs import AliyunEcs
-from cli.aliyun_eip import AliyunEip
-from cli.aliyun_rds import AliyunRds
-from cli.aliyun_redis import AliyunRedis
 
-
-# from cli.aliyun_slb import AliyunSlb
-
-
-def handle_k8s(specs):
+def handle_k8s():
     config.load_incluster_config()
     k8s_apps_v1 = client.CoreV1Api()
     namespace = getenv('INIT_POD_NAMESPACE', 'default')
     dep = client.V1ConfigMap(
-        data=config_map_data(specs)
+        data=generate_config_map()
     )
     resp = k8s_apps_v1.patch_namespaced_config_map(name='grafana-cms-dashboards', namespace=namespace, body=dep)
     print("ConfigMap update. name='%s'" % resp.metadata.name)
 
 
-def config_map_data(specs):
+def generate_config_map():
     config_map_dict = {}
-    print('Start generating json configuration!')
+    for root, dirs, files in os.walk("../model"):
+        for file in files:
+            # with open("/var/local/model/{0}".format(filename), "r") as fd:
+            with open(os.path.join(root, file), "r") as fd:
+                config_map_dict.update({file: json.loads(fd.read())})
 
-    rds = AliyunEcs(specs)
-    config_map_dict.update(rds.action())
-
-    rds = AliyunRds(specs)
-    config_map_dict.update(rds.action())
-
-    eip = AliyunEip(specs)
-    config_map_dict.update(eip.action())
-
-    rds = AliyunRedis(specs)
-    config_map_dict.update(rds.action())
-
-    # slb = AliyunSlb(specs)
-    # config_map_dict.update(slb.action())
     return config_map_dict

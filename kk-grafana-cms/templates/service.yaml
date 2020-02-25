@@ -14,3 +14,21 @@ spec:
   selector:
     app.kubernetes.io/name: {{ include "kk-grafana-cms.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "cms-variable.fullname" . }}
+  labels:
+{{ include "cms-variable.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: web
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ template "cms-variable.fullname" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

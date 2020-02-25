@@ -43,3 +43,28 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
+
+{{/*
+backend labels
+*/}}
+{{- define "cms-variable.labels" -}}
+app.kubernetes.io/name: cms-variable
+helm.sh/chart: {{ include "kk-grafana-cms.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{- define "cms-variable.fullname" -}}
+{{- printf "%s-%s" .Release.Name "cms-variable" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "cms-secret.fullname" -}}
+{{- printf "%s-%s" .Release.Name "cms-secret" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "cms-cronjob.fullname" -}}
+{{- printf "%s-%s" .Release.Name "cms-cronjob" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}

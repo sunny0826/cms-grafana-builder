@@ -42,12 +42,6 @@ spec:
               apiVersion: v1
               fieldPath: metadata.namespace
         command: ["cmsbuilder"]
-{{/*        args:*/}}
-{{/*          - --out-path*/}}
-{{/*          - /work-dir*/}}
-{{/*        volumeMounts:*/}}
-{{/*        - name: workdir*/}}
-{{/*          mountPath: "/work-dir"*/}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
@@ -68,8 +62,6 @@ spec:
           volumeMounts:
           - mountPath: /var/lib/grafana
             name: grafana-storage
-{{/*          - name: workdir*/}}
-{{/*            mountPath: /var/lib/grafana/cms-dashboards*/}}
           - mountPath: /etc/grafana/provisioning/dashboards/all.yaml
             name: grafana-provisionings
             subPath: dashboards.yaml
@@ -152,3 +144,62 @@ spec:
           name: grafana-cms-dashboards
         name: grafana-dashboards
 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "cms-variable.fullname" . }}
+  labels:
+{{ include "cms-variable.labels" . | indent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "cms-variable.fullname" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ template "cms-variable.fullname" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ template "cms-variable.fullname" . }}
+          env:
+            - name: ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "cms-secret.fullname" . }}
+                  key: accessKeyId
+            - name: ACCESS_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "cms-secret.fullname" . }}
+                  key: accessSecret
+            - name: REGION_ID
+              value: {{ .Values.region_id }}
+          command: ["/bin/sh", "-c", "cms run"]
+          image: "{{ .Values.backend_image.repository }}:{{ .Values.backend_image.tag }}"
+          imagePullPolicy: {{ .Values.backend_image.pullPolicy }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "cms refresh"]
+          ports:
+            - name: web
+              containerPort: 8088
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: web
+          resources:
+{{ toYaml .Values.backend_resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
