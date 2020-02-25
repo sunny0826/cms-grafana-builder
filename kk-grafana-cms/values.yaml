@@ -14,12 +14,12 @@ image:
   pullPolicy: IfNotPresent
 
 build_image:
-  repository: guoxudongdocker/grafana-build
+  repository: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
   tag: 0.2.10
   pullPolicy: Always
 
 backend_image:
-  repository: guoxudongdocker/grafana-build
+  repository: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
   tag: 0.2.10
   pullPolicy: Always
 

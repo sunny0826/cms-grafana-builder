@@ -9,6 +9,6 @@ steps:
       from_secret: docker_user
     password:
       from_secret: docker_pass
-    repo: guoxudongdocker/grafana-build
+    repo: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
     tags:
     - 0.2.${DRONE_BUILD_NUMBER}
