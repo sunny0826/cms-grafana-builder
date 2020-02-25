@@ -8,7 +8,6 @@ from os import getenv
 
 from aliyunsdkcore.client import AcsClient
 from bottle import (Bottle, HTTPResponse, request, response, json_dumps as dumps, run)
-from jinja2 import Template
 
 from cli.aliyun_info import AliyunSlb, AliyunRds, AliyunEip, AliyunRedis, AliyunMongoDB, MonitorEcsTop
 from cli.db import initDB, refresh_other, refresh_ecs, get_instance_name
