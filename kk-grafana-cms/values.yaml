@@ -15,12 +15,12 @@ image:
 
 build_image:
   repository: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
-  tag: 0.2.8
+  tag: 0.2.9
   pullPolicy: Always
 
 backend_image:
   repository: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
-  tag: 0.2.8
+  tag: 0.2.9
   pullPolicy: Always
 
 schedule: "30 2 * * *"
