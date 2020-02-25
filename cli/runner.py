@@ -8,6 +8,7 @@ from os import getenv
 
 from aliyunsdkcore.client import AcsClient
 from bottle import (Bottle, HTTPResponse, request, response, json_dumps as dumps, run)
+from jinja2 import Template
 
 from cli.aliyun_info import AliyunSlb, AliyunRds, AliyunEip, AliyunRedis, AliyunMongoDB, MonitorEcsTop
 from cli.db import initDB, refresh_other, refresh_ecs, get_instance_name
@@ -30,10 +31,8 @@ def index():
 
 
 @app.route('/refresh', method="GET")
-def refresh():
-    parser = get_parser()
-    args = parser.parse_args()
-    refresh(args)
+def get_refresh():
+    refresh()
     return HTTPResponse(body=dumps(['refresh resource']), headers={'Content-Type': 'application/json'})
 
 
@@ -46,6 +45,14 @@ def search():
     if produce_type == '':
         return HTTPResponse(body=dumps(['cpu_top_10', 'mem_top_10', 'disk_top_10', 'cpu_top', 'mem_top', 'disk_top']),
                             headers={'Content-Type': 'application/json'})
+    elif produce_type.startswith('all('):
+        sql = 'select id from {0}'.format(re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))[0])
+        cursor.execute(sql)
+        values = cursor.fetchall()
+        result = []
+        for val in values:
+            result.append('{"instanceId":"' + val[0] + '"}')
+        body = [','.join(result)]
     elif produce_type.startswith('num('):
         sql = 'select count(*) from {0}'.format(re.findall(r'[(](.*?)[)]', produce_type.replace('\\', ''))[0])
         cursor.execute(sql)
@@ -137,7 +144,9 @@ def load_arg(accessKeyId, accessSecret, regionId):
     return AcsClient(accessKeyId, accessSecret, regionId)
 
 
-def refresh(args):
+def refresh():
+    parser = get_parser()
+    args = parser.parse_args()
     print("refresh all")
     initDB()
     specs = load_arg(args.access_key_id, args.access_secret, args.region_id)
@@ -160,6 +169,7 @@ def get_parser():
         prog='runner'
     )
     subparsers = parser.add_subparsers(help='sub-command help')
+
     run_parser = subparsers.add_parser('run', help='run backend')
     run_parser.add_argument(
         '--port',
@@ -207,6 +217,9 @@ def get_parser():
         default=getenv('REGION_ID', 'cn-shanghai'),
         help='aliyun regionId,default:cn-shanghai'
     )
+
+    init_parser = subparsers.add_parser('init', help='init resource')
+    init_parser.set_defaults(func=init)
 
     return parser
 
