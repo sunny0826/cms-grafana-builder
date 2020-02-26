@@ -1,5 +1,7 @@
 # cms-grafana-builder
 
+English | [简体中文](README_CN.md)
+
 ![grafana](https://raw.githubusercontent.com/grafana/grafana/master/docs/logo-horizontal.png)
 
 The open-source platform for monitoring and observability.
@@ -9,6 +11,8 @@ The open-source platform for monitoring and observability.
 This chart helps you run a grafana server that include aliyun cms dashboard.
 
 ## Installing the Chart
+
+### Helm v3
 
 To install the chart with the release name `my-release`:
 
@@ -48,31 +52,42 @@ The following table lists the configurable parameters of the kk-grafana-cms char
 
 Parameter                 	 	| Description                        				| Default
 ------------------------------- | ------------------------------------------------- | ----------------------------------------------------------
-`plugins`           	        | Grafana plugin list.         	            		| `grafana-clock-panel,ryantxu-ajax-panel,farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/aliyun/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana`
+`plugins`           	        | Grafana plugin list.         	            		| `farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana`
 `access_key_id`                	| Aliyun Access Key Id.                  			| ``
 `access_secret`                	| Aliyun Access Secret.                  			| ``
 `region_id`                    	| Aliyun Region Id.                        			| `cn-shanghai`
 `password`                    	| Grafana admin password.                  			| `admin`
 `schedule`                    	| CronJob schedule.                     			| `"30 2 * * *"`
-`image.repository`           	| Image source repository name.         			| `registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana`
-`image.pullPolicy`         		| Image pull policy                  				| `IfNotPresent`
-`build_image.repository`        | Build image source repository name.         	    | `registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build`
-`build_image.tag`              	| Image tag.                    		  	    	| `3`
-`build_image.pullPolicy`       	| Image pull policy                  				| `IfNotPresent`
+`image.repository`           	| Image source repository name.         			| `grafana/grafana`
+`image.pullPolicy`         		| Image pull policy.                  				| `Always`
+`build_image.repository`        | Build image source repository name.         	    | `guoxudongdocker/grafana-build`
+`build_image.tag`              	| Image tag.                    		  	    	| `0.2.1-release`
+`build_image.pullPolicy`       	| Image pull policy.                 				| `Always`
+`backend_image.repository`      | Datasource image source repository name.          | `guoxudongdocker/grafana-build`
+`backend_image.tag`             | Image tag.                        		    	| `0.2.1-release`
+`backend_image.pullPolicy`      | Image pull policy.                         		| `Always`
 `ingress.enabled`         		| Whether to open ingress.             				| `false`
 `ingress.hosts`          		| Ingress hosts.                       				| `[]`
 
-## Screenshots
+### Dashboard
 
-ECS
-![image](docs/image/ecs.jpg)
+![Dashboard](docs/image/dashboard.png)
 
-RDS:
-![image](docs/image/rds.jpg)
+### ECS
+![ecs](docs/image/ecs.png)
 
-EIP:
-![image](docs/image/eip.png)
+### RDS
+![rds](docs/image/rds.png)
 
-Redis:
-![image](docs/image/redis.png)
+### OSS
+![oss](docs/image/oss.png)
+
+### SLB
+![slb](docs/image/slb.png)
+
+### EIP
+![eip](docs/image/eip.png)
+
+### Redis
+![redis](docs/image/redis.png)
 

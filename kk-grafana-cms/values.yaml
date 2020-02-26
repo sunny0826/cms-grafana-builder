@@ -27,7 +27,7 @@ cronjob_image:
   repository: odise/busybox-curl
   tag: latest
 
-schedule: "50 9 * * *"
+schedule: "30 2 * * *"
 
 nameOverride: ""
 fullnameOverride: ""

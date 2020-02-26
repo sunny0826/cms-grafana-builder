@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: "cms-cronjob"
+  name: {{ template "cms-cronjob.fullname" . }}
   labels:
 {{ include "kk-grafana-cms.labels" . | indent 4 }}
 spec:
@@ -15,7 +15,6 @@ spec:
           - name: cronejob
             image: {{ .Values.cronjob_image.repository }}:{{ .Values.cronjob_image.tag }}
             command:
-              - "/bin/sh"
-              - "-c"
-              - "curl"
-              - {{ template "cms-variable.fullname" . }}/refresh
+              - /bin/sh
+              - -c
+              - curl -X GET  {{ template "cms-variable.fullname" . }}/refresh
