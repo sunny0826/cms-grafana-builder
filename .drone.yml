@@ -3,7 +3,7 @@ name: cms-grafana-build
 
 steps:
 - name: publish
-  image: plugin/docker
+  image: plugins/docker
   settings:
     username:
       from_secret: docker_user
