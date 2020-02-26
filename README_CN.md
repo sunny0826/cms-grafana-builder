@@ -83,7 +83,14 @@ $ helm uninstall my-release
 ![oss](docs/image/oss.png)
 
 ### SLB
+
+**4层**
+
 ![slb](docs/image/slb.png)
+
+**7层**
+
+![slb-7](docs/image/slb-7.png)
 
 ### EIP
 ![eip](docs/image/eip.png)

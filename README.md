@@ -83,7 +83,14 @@ Parameter                 	 	| Description                        				| Default
 ![oss](docs/image/oss.png)
 
 ### SLB
+
+**Layer 4**
+
 ![slb](docs/image/slb.png)
+
+**Layer 7**
+
+![slb-7](docs/image/slb-7.png)
 
 ### EIP
 ![eip](docs/image/eip.png)
