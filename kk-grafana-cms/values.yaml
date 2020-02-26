@@ -2,7 +2,7 @@
 
 replicaCount: 1
 
-plugins: farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/aliyun/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana
+plugins: farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana
 
 access_key_id: ""
 access_secret: ""
@@ -15,15 +15,19 @@ image:
 
 build_image:
   repository: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
-  tag: 0.2.14
+  tag: 0.2.1-release
   pullPolicy: Always
 
 backend_image:
   repository: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
-  tag: 0.2.14
+  tag: 0.2.1-release
   pullPolicy: Always
 
-schedule: "30 2 * * *"
+cronjob_image:
+  repository: odise/busybox-curl
+  tag: latest
+
+schedule: "50 9 * * *"
 
 nameOverride: ""
 fullnameOverride: ""

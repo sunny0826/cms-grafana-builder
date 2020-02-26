@@ -10,13 +10,10 @@ spec:
     spec:
       template:
         spec:
-          serviceAccountName: {{ .Chart.Name }}-sa
-          imagePullSecrets:
-          - name: registry-pull-secret
           restartPolicy: OnFailure
           containers:
           - name: cronejob
-            image: "odise/busybox-curl"
+            image: {{ .Values.cronjob_image.repository }}:{{ .Values.cronjob_image.tag }}
             command:
               - "/bin/sh"
               - "-c"

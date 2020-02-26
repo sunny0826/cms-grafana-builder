@@ -15,7 +15,7 @@ steps:
     repo: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
     registry: registry-vpc.cn-shanghai.aliyuncs.com
     tags:
-    - 0.2.${DRONE_BUILD_NUMBER}
+    - 0.2.1-release
 
 volumes:
 - name: docker
