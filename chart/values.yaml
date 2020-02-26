@@ -1,4 +1,4 @@
-# Default values for kk-grafana-cms.
+# Default values for chart.
 
 replicaCount: 1
 

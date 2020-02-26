@@ -16,11 +16,3 @@ data:
        updateIntervalSeconds: 180
        options:
          path: /var/lib/grafana/cms-dashboards
-
-     - name: CMS_VARIABLE
-       orgId: 1
-       folder: ''
-       type: file
-       updateIntervalSeconds: 3600
-       options:
-         path: /var/lib/grafana/var-dashboards

@@ -76,8 +76,6 @@ spec:
             subPath: all.yaml
           - name: workdir
             mountPath: /var/lib/grafana/cms-dashboards/
-{{/*          - name: grafana-dashboards*/}}
-{{/*            mountPath: /var/lib/grafana/cms-dashboards*/}}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
         - args:
@@ -144,11 +142,6 @@ spec:
           defaultMode: 420
           name: grafana-cms-provisionings
         name: grafana-provisionings
-{{/*      - configMap:*/}}
-{{/*          defaultMode: 420*/}}
-{{/*          name: grafana-cms-dashboards*/}}
-{{/*        name: grafana-dashboards*/}}
-
 ---
 apiVersion: apps/v1
 kind: Deployment
