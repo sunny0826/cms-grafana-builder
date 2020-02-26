@@ -3,21 +3,12 @@ name: cms-grafana-build
 
 steps:
 - name: publish
-  image: registry-vpc.cn-shanghai.aliyuncs.com/keking/docker
-  volumes:
-    - name: docker
-      path: /var/run/docker.sock
+  image: plugin/docker
   settings:
     username:
       from_secret: docker_user
     password:
       from_secret: docker_pass
-    repo: registry-vpc.cn-shanghai.aliyuncs.com/keking/grafana-build
-    registry: registry-vpc.cn-shanghai.aliyuncs.com
+    repo: guoxudongdocker/grafana-build
     tags:
     - 0.2.1-release
-
-volumes:
-- name: docker
-  host:
-    path: /var/run/docker.sock

@@ -14,6 +14,8 @@
 
 ### Helm v3
 
+在 [release](https://github.com/sunny0826/cms-grafana-builder/releases) 页面下载 cms-grafana-0.3.0.tgz 包。
+
 使用 `my-release` 名称安装：
 
 ```bash

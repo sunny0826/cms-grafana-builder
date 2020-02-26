@@ -14,11 +14,13 @@ This chart helps you run a grafana server that include aliyun cms dashboard.
 
 ### Helm v3
 
+Download cms-grafana-0.3.0.tgz package to install in [release](https://github.com/sunny0826/cms-grafana-builder/releases).
+
 To install the chart with the release name `my-release`:
 
 ```bash
 # start
-$ helm install my-release kk-grafana-cms \
+$ helm install my-release cms-grafana-0.3.0.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -26,7 +28,7 @@ $ helm install my-release kk-grafana-cms \
 --set password={admin_password}
 
 # set ingress and open tls
-helm install my-release kk-grafana-cms \
+helm install my-release cms-grafana-0.3.0.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
