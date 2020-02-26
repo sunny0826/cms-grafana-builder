@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 10,
-  "iteration": 1582522554567,
+  "id": 9,
+  "iteration": 1582687262341,
   "links": [],
   "panels": [
     {
@@ -418,6 +418,24 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "content": "### [EIP 控制台](https://vpc.console.aliyun.com/eip/)",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 16
+      },
+      "id": 7,
+      "mode": "markdown",
+      "options": {},
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
     }
   ],
   "schemaVersion": 20,
@@ -617,5 +635,5 @@
   "timezone": "",
   "title": "弹性公网IP",
   "uid": "LV6CA-QWk",
-  "version": 7
+  "version": 1
 }

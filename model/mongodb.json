@@ -2102,7 +2102,7 @@
           "text": "prod-union-斑马",
           "value": "prod-union-斑马"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "mongodb",
         "hide": 0,
         "includeAll": false,
@@ -2168,7 +2168,7 @@
           "text": "{'instanceId': 'dds-uf613f039dbd47f4'}",
           "value": "{'instanceId': 'dds-uf613f039dbd47f4'}"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "mongodb($name)",
         "hide": 2,
         "includeAll": false,
@@ -2241,7 +2241,7 @@
           "text": "8",
           "value": "8"
         },
-        "datasource": "cms-variables",
+        "datasource": "Variable DataSource",
         "definition": "num(mongodb)",
         "hide": 0,
         "includeAll": false,

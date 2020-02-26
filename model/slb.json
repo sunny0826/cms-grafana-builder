@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 8,
-  "iteration": 1582522545178,
+  "id": 6,
+  "iteration": 1582686574799,
   "links": [],
   "panels": [
     {
@@ -1778,13 +1778,6 @@
           "id": 23,
           "mode": "html",
           "options": {},
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "targets": [
             {
               "describe": "",
@@ -1859,13 +1852,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -1879,7 +1865,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceStatusCode2xx",
@@ -1964,13 +1950,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -1984,7 +1963,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceStatusCode3xx",
@@ -2069,13 +2048,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -2089,7 +2061,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceRt",
@@ -2174,13 +2146,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -2194,7 +2159,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceStatusCode4xx",
@@ -2279,13 +2244,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -2299,7 +2257,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceStatusCode5xx",
@@ -2385,13 +2343,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -2405,7 +2356,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceQpsUtilization",
@@ -2490,13 +2441,6 @@
               "to": "null"
             }
           ],
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}",
-              "value": "{\"instanceId\":\"lb-uf68s25yg9jq4su5f3zie\"}"
-            }
-          },
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -2510,7 +2454,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "InstanceQps",
@@ -2559,8 +2503,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "prod-托管-可用区B",
-          "value": "prod-托管-可用区B"
+          "tags": [],
+          "text": "prod-内网-服务网关",
+          "value": "prod-内网-服务网关"
         },
         "datasource": "Variable DataSource",
         "definition": "slb",
@@ -2584,8 +2529,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "{'instanceId': 'lb-uf68s25yg9jq4su5f3zie'}",
-          "value": "{'instanceId': 'lb-uf68s25yg9jq4su5f3zie'}"
+          "text": "{'instanceId': 'lb-uf6sgz9gx4hjmc7h7g8fa'}",
+          "value": "{'instanceId': 'lb-uf6sgz9gx4hjmc7h7g8fa'}"
         },
         "datasource": "Variable DataSource",
         "definition": "slb($name)",
@@ -2629,5 +2574,5 @@
   "timezone": "",
   "title": "SLB 监控",
   "uid": "GgIP4awWz",
-  "version": 14
+  "version": 1
 }

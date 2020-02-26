@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 7,
-  "iteration": 1582522514478,
+  "id": 4,
+  "iteration": 1582686495012,
   "links": [],
   "panels": [
     {
@@ -1100,7 +1100,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "MySQL_NetworkInNew",
@@ -1207,7 +1207,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "MySQL_NetworkOutNew",
@@ -1314,7 +1314,7 @@
             {
               "describe": "",
               "dimensions": [
-                "$dimension"
+                "$id"
               ],
               "group": "",
               "metric": "MySQL_ActiveSessions",
@@ -1561,5 +1561,5 @@
   "timezone": "",
   "title": "RDS 监控",
   "uid": "ffGYG-wZz",
-  "version": 12
+  "version": 1
 }

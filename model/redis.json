@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 11,
-  "iteration": 1582522533907,
+  "id": 5,
+  "iteration": 1582687444428,
   "links": [],
   "panels": [
     {
@@ -632,13 +632,31 @@
       "valueName": "current"
     },
     {
+      "content": "### [Redis 控制台](https://kvstorenext.console.aliyun.com/)",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 9
+      },
+      "id": 27,
+      "mode": "markdown",
+      "options": {},
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 11
       },
       "id": 4,
       "panels": [],
@@ -665,7 +683,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 12
       },
       "id": 17,
       "legend": {
@@ -769,7 +787,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 12
       },
       "id": 18,
       "legend": {
@@ -877,7 +895,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 20
       },
       "id": 25,
       "legend": {
@@ -986,7 +1004,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 20
       },
       "id": 24,
       "legend": {
@@ -1094,7 +1112,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 26
+        "y": 28
       },
       "id": 5,
       "legend": {
@@ -1203,7 +1221,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 26
+        "y": 28
       },
       "id": 20,
       "legend": {
@@ -1311,7 +1329,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 36
       },
       "id": 10,
       "legend": {
@@ -1419,7 +1437,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 36
       },
       "id": 22,
       "legend": {
