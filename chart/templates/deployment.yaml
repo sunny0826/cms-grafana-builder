@@ -54,6 +54,10 @@ spec:
             value: {{ .Values.plugins }}
           - name: GF_SECURITY_ADMIN_PASSWORD__FILE
             value: /var/local/secrets/admin_password
+          - name: GF_AUTH_ANONYMOUS_ENABLED
+            value: true
+          - name: GF_AUTH_BASIC_ENABLED
+            value: true
           ports:
             - name: web
               containerPort: 3000
