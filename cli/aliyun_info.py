@@ -15,7 +15,7 @@ from aliyunsdkvpc.request.v20160428.DescribeEipAddressesRequest import DescribeE
 
 class AliyunBase(object):
     def __init__(self, ):
-        self.clent = None
+        self.client = None
         self.request = None
         self.product = None
         self.page = 1
@@ -34,16 +34,16 @@ class AliyunBase(object):
 
 class AliyunEcs(AliyunBase):
 
-    def __init__(self, clent):
+    def __init__(self, client):
         super(AliyunEcs, self).__init__()
-        self.clent = clent
+        self.client = client
         self.request = DescribeInstancesRequest()
         self.product = 'ecs'
 
     def load_all(self, ):
         try:
             self.set_params()
-            response = json.loads(self.clent.do_action_with_exception(self.request))
+            response = json.loads(self.client.do_action_with_exception(self.request))
             total_count = response.get('TotalCount')
             EcsList = response.get('Instances').get('Instance')
             if total_count > self.page_size:
@@ -51,7 +51,7 @@ class AliyunEcs(AliyunBase):
                 for i in range(2, all_num + 1):
                     self.page = i
                     self.set_params()
-                    response = json.loads(self.clent.do_action_with_exception(self.request))
+                    response = json.loads(self.client.do_action_with_exception(self.request))
                     EcsList.extend(response.get('Instances').get('Instance'))
             ecs_list = []
             for item in EcsList:
@@ -64,16 +64,16 @@ class AliyunEcs(AliyunBase):
 
 class AliyunRds(AliyunBase):
 
-    def __init__(self, clent):
+    def __init__(self, client):
         super(AliyunRds, self).__init__()
-        self.clent = clent
+        self.client = client
         self.request = DescribeDBInstancesRequest()
         self.product = 'rds'
 
     def load_all(self, ):
         try:
             self.set_params()
-            response = json.loads(self.clent.do_action_with_exception(self.request))
+            response = json.loads(self.client.do_action_with_exception(self.request))
             RdsList = response.get('Items').get('DBInstance')
             total_count = response.get('TotalRecordCount')
             if total_count > self.page_size:
@@ -81,7 +81,7 @@ class AliyunRds(AliyunBase):
                 for i in range(2, all_num + 1):
                     self.page = i
                     self.set_params()
-                    response = json.loads(self.clent.do_action_with_exception(self.request))
+                    response = json.loads(self.client.do_action_with_exception(self.request))
                     RdsList.extend(response.get('Items').get('DBInstance'))
             rds_list = []
             for item in RdsList:
@@ -93,16 +93,16 @@ class AliyunRds(AliyunBase):
 
 class AliyunSlb(AliyunBase):
 
-    def __init__(self, clent, ):
+    def __init__(self, client, ):
         super(AliyunSlb, self).__init__()
-        self.clent = clent
+        self.client = client
         self.request = DescribeLoadBalancersRequest()
         self.product = 'slb'
 
     def load_all(self, ):
         try:
             self.set_params()
-            response = json.loads(self.clent.do_action_with_exception(self.request))
+            response = json.loads(self.client.do_action_with_exception(self.request))
             SlbList = response.get('LoadBalancers').get('LoadBalancer')
             total_count = response.get('TotalCount')
             if total_count > self.page_size:
@@ -110,7 +110,7 @@ class AliyunSlb(AliyunBase):
                 for i in range(2, all_num + 1):
                     self.page = i
                     self.set_params()
-                    response = json.loads(self.clent.do_action_with_exception(self.request))
+                    response = json.loads(self.client.do_action_with_exception(self.request))
                     SlbList.extend(response.get('LoadBalancers').get('LoadBalancer'))
             slb_list = []
             for item in SlbList:
@@ -122,16 +122,16 @@ class AliyunSlb(AliyunBase):
 
 class AliyunEip(AliyunBase):
 
-    def __init__(self, clent):
+    def __init__(self, client):
         super(AliyunEip, self).__init__()
-        self.clent = clent
+        self.client = client
         self.request = DescribeEipAddressesRequest()
         self.product = 'eip'
 
     def load_all(self, ):
         try:
             self.set_params()
-            response = json.loads(self.clent.do_action_with_exception(self.request))
+            response = json.loads(self.client.do_action_with_exception(self.request))
             EipList = response.get('EipAddresses').get('EipAddress')
             total_count = response.get('TotalCount')
             if total_count > self.page_size:
@@ -139,7 +139,7 @@ class AliyunEip(AliyunBase):
                 for i in range(2, all_num + 1):
                     self.page = i
                     self.set_params()
-                    response = json.loads(self.clent.do_action_with_exception(self.request))
+                    response = json.loads(self.client.do_action_with_exception(self.request))
                     EipList.extend(response.get('EipAddresses').get('EipAddress'))
             epi_list = []
             for item in EipList:
@@ -151,16 +151,16 @@ class AliyunEip(AliyunBase):
 
 class AliyunRedis(AliyunBase):
 
-    def __init__(self, clent):
+    def __init__(self, client):
         super(AliyunRedis, self).__init__()
-        self.clent = clent
+        self.client = client
         self.request = RedisInstances()
         self.product = 'redis'
 
     def load_all(self, ):
         try:
             self.set_params()
-            response = json.loads(self.clent.do_action_with_exception(self.request))
+            response = json.loads(self.client.do_action_with_exception(self.request))
             RedisList = response.get('Instances').get('KVStoreInstance')
             total_count = response.get('TotalCount')
             if total_count > self.page_size:
@@ -168,7 +168,7 @@ class AliyunRedis(AliyunBase):
                 for i in range(2, all_num + 1):
                     self.page = i
                     self.set_params()
-                    response = json.loads(self.clent.do_action_with_exception(self.request))
+                    response = json.loads(self.client.do_action_with_exception(self.request))
                     RedisList.extend(response.get('Instances').get('KVStoreInstance'))
             redis_list = []
             for item in RedisList:
@@ -180,16 +180,16 @@ class AliyunRedis(AliyunBase):
 
 class AliyunMongoDB(AliyunBase):
 
-    def __init__(self, clent):
+    def __init__(self, client):
         super(AliyunMongoDB, self).__init__()
-        self.clent = clent
+        self.client = client
         self.request = MongoDBInstances()
         self.product = 'mongodb'
 
     def load_all(self, ):
         try:
             self.set_params()
-            response = json.loads(self.clent.do_action_with_exception(self.request))
+            response = json.loads(self.client.do_action_with_exception(self.request))
             MongoList = response.get('DBInstances').get('DBInstance')
             total_count = response.get('TotalCount')
             if total_count > self.page_size:
@@ -197,7 +197,7 @@ class AliyunMongoDB(AliyunBase):
                 for i in range(2, all_num + 1):
                     self.page = i
                     self.set_params()
-                    response = json.loads(self.clent.do_action_with_exception(self.request))
+                    response = json.loads(self.client.do_action_with_exception(self.request))
                     MongoList.extend(response.get('DBInstances').get('DBInstance'))
             mongo_list = []
             for item in MongoList:
@@ -208,11 +208,11 @@ class AliyunMongoDB(AliyunBase):
 
 
 class MonitorEcsTop(object):
-    def __init__(self, clent):
-        self.clent = None
+    def __init__(self, client):
+        self.client = None
         self.request = None
         self.request = QueryMetricTopRequest()
-        self.clent = clent
+        self.client = client
         self.request.set_accept_format('json')
         self.request.set_Project('acs_ecs_dashboard')
 
@@ -220,7 +220,7 @@ class MonitorEcsTop(object):
         '''CPU使用率top10监控'''
         self.request.add_query_param('Metric', 'CPUUtilization')
         self.request.add_query_param('Orderby', 'Average')
-        response = self.clent.do_action_with_exception(self.request)
+        response = self.client.do_action_with_exception(self.request)
         monitor_list = json.loads(json.loads(response.decode()).get('Datapoints', None))
         return monitor_list
 
@@ -228,7 +228,7 @@ class MonitorEcsTop(object):
         '''内存使用率top10监控'''
         self.request.add_query_param('Metric', 'memory_usedutilization')
         self.request.add_query_param('Orderby', 'Average')
-        response = self.clent.do_action_with_exception(self.request)
+        response = self.client.do_action_with_exception(self.request)
         monitor_list = json.loads(json.loads(response.decode()).get('Datapoints', None))
         return monitor_list
 
@@ -236,6 +236,6 @@ class MonitorEcsTop(object):
         '''磁盘使用率top10监控'''
         self.request.add_query_param('Metric', 'diskusage_utilization')
         self.request.add_query_param('Orderby', 'Average')
-        response = self.clent.do_action_with_exception(self.request)
+        response = self.client.do_action_with_exception(self.request)
         monitor_list = json.loads(json.loads(response.decode()).get('Datapoints', None))
         return monitor_list
