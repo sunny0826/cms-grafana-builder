@@ -1,0 +1,30 @@
+apiVersion: 1
+deleteDatasources:
+ - name: CMS Grafana Service
+   orgId: 1
+datasources:
+ - name: CMS Grafana Service
+   type: aliyun_cms_grafana_datasource
+   access: proxy
+   url: http://metrics.cn-shanghai.aliyuncs.com
+   basicAuth: false
+   withCredentials: false
+   isDefault: true
+   jsonData:
+     cmsAccessKey: #ak
+     cmsSecretKey: #as
+     keepCookies: []
+   secureJsonFields: {}
+   readOnly: false
+
+ - name: Variable DataSource
+   type: grafana-simple-json-datasource
+   access: proxy
+   url: http://127.0.0.1:8088
+   basicAuth: false
+   withCredentials: false
+   isDefault: false
+   jsonData:
+     keepCookies: []
+   secureJsonFields: {}
+   readOnly: false

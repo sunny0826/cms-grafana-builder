@@ -10,6 +10,14 @@
 
 运行部署 grafana 并展示一整套阿里云监控的仪表盘。
 
+## 快速开始
+
+你可以使用 `docker` 来快速体验全部功能，但这只适用于本地测试，并没有定时刷新资源信息等功能。在生产环境请使用 `helm` 部署。
+
+```bash
+docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.2.1-release
+```
+
 ## 使用 Helm 安装
 
 ### Helm v3

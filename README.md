@@ -10,6 +10,14 @@ The open-source platform for monitoring and observability.
 
 This chart helps you run a grafana server that include aliyun cms dashboard.
 
+## Quick Start
+
+You can use the `docker` to experience the full functionality, with this should only be applied to local, production environments please use `helm`.
+
+```bash
+docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.2.1-release
+```
+
 ## Installing the Chart
 
 ### Helm v3
