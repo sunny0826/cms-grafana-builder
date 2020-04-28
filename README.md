@@ -48,6 +48,16 @@ helm install my-release cms-grafana-0.3.0.tgz \
 ```
 __Please resolve the DNS to ingress.__
 
+### Viewing the Grafnan dashboard
+
+To do without ingress, you can use `kubectl port-forward`.
+
+```bash
+kubectl port-forward -n {your_namespace} deployment/my-release-cms-grafana 8080:8080 &
+```
+
+Visit http://localhost:8080 in your web browser.
+
 ## Uninstall
 
 To uninstall/delete the `my-release` deployment:

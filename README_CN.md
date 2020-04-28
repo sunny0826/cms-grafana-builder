@@ -48,6 +48,16 @@ helm install my-release kk-grafana-cms \
 ```
 __请将 DNS 解析到该 ingress。__
 
+### 查看 Grafnan dashboard
+
+如果没有使用 ingress，可以使用 `kubectl port-forward` 命令：
+
+```bash
+kubectl port-forward -n {your_namespace} deployment/my-release-cms-grafana 8080:8080 &
+```
+
+在浏览器中访问 http://localhost:8080。
+
 ## 卸载
 
 ```bash
