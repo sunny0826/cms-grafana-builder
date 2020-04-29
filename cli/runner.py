@@ -221,6 +221,7 @@ def get_parser():
 
 
 def runner(args):
+    refresh(args)
     run(app=app, host='0.0.0.0', port=args.port)
 
 

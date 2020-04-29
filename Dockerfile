@@ -8,4 +8,4 @@ RUN pip3 install /app
 
 WORKDIR /app
 
-ENTRYPOINT ["/app/docker-entrypoint.sh"]
+ENTRYPOINT ["cms","run"]
