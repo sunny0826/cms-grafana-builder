@@ -1,8 +1,8 @@
 #!/bin/sh
 
 echo "refresh resource"
-/app/cms refresh
+cms refresh
 
 echo "start cms"
-/app/cms run
+cms run
 
