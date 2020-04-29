@@ -221,13 +221,13 @@ def get_parser():
 
 
 def runner(args):
-    refresh(args)
     run(app=app, host='0.0.0.0', port=args.port)
 
 
 def main():
     parser = get_parser()
     args = parser.parse_args()
+    refresh(args)
     try:
         args.func(args)
     except KeyboardInterrupt:

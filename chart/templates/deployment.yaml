@@ -180,6 +180,7 @@ spec:
                   key: accessSecret
             - name: REGION_ID
               value: {{ .Values.region_id }}
+          command: ["/bin/sh", "-c", "cms run"]
           image: "{{ .Values.backend_image.repository }}:{{ .Values.backend_image.tag }}"
           imagePullPolicy: {{ .Values.backend_image.pullPolicy }}
           ports:
