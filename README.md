@@ -28,7 +28,7 @@ To install the chart with the release name `my-release`:
 
 ```bash
 # start
-$ helm install my-release cms-grafana-0.3.0.tgz \
+$ helm install my-release cms-grafana-0.3.1.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -36,7 +36,7 @@ $ helm install my-release cms-grafana-0.3.0.tgz \
 --set password={admin_password}
 
 # set ingress and open tls
-helm install my-release cms-grafana-0.3.0.tgz \
+helm install my-release cms-grafana-0.3.1.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -63,7 +63,7 @@ Visit http://localhost:8080 in your web browser.
 To uninstall/delete the `my-release` deployment:
 
 ```bash
-$ helm uninstall my-release
+$ helm uninstall my-release -n {your_namespace}
 ```
 
 ## Configuration

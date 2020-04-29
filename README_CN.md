@@ -28,7 +28,7 @@ docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRE
 
 ```bash
 # start
-$ helm install my-release kk-grafana-cms \
+$ helm install my-release cms-grafana-0.3.1.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -36,7 +36,7 @@ $ helm install my-release kk-grafana-cms \
 --set password={admin_password}
 
 # 设置 ingress 和 SSL 证书 
-helm install my-release kk-grafana-cms \
+helm install my-release cms-grafana-0.3.1.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -61,7 +61,7 @@ kubectl port-forward -n {your_namespace} deployment/my-release-cms-grafana 8080:
 ## 卸载
 
 ```bash
-$ helm uninstall my-release
+$ helm uninstall my-release -n {your_namespace}
 ```
 
 ## 配置
