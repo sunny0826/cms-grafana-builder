@@ -43,7 +43,7 @@ helm install my-release cms-grafana-0.3.0.tgz \
 --set region_id={your_aliyun_region_id} \
 --set password={admin_password} \
 --set ingress.enabled=true \
---set ingress.hosts[0].host="{your_host}",ingress.hosts[0].paths[0]="/"
+--set ingress.hosts[0].host="{your_host}",ingress.hosts[0].paths[0]="/" \
 --set ingress.tls[0].secretName="{your_tls_secret_name}",ingress.tls[0].hosts[0]="{your_tls_host}"
 ```
 __Please resolve the DNS to ingress.__

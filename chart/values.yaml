@@ -6,8 +6,8 @@ plugins: farski-blendstat-panel,grafana-simple-json-datasource,https://github.co
 
 access_key_id: ""
 access_secret: ""
-region_id: cn-shanghai
-password: admin
+region_id: "cn-shanghai"
+password: "admin"
 
 image:
   repository: grafana/grafana
