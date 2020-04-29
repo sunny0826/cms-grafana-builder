@@ -11,7 +11,7 @@ steps:
       from_secret: docker_pass
     repo: guoxudongdocker/grafana-build
     tags:
-    - 0.2.1-release
+    - 0.3.1-release
 
 - name: all-in-one
   image: plugins/docker
