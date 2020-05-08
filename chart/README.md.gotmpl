@@ -1,0 +1,62 @@
+{{ template "chart.header" . }}
+{{ template "chart.description" . }}
+
+{{ template "chart.versionLine" . }}
+
+{{ template "chart.sourceLinkLine" . }}
+
+## Introduction
+
+This chart helps you run a grafana server that include aliyun cms dashboard.
+
+## Installing the Chart
+
+### Helm v3
+
+Download cms-grafana-0.3.0.tgz package to install in [release](https://github.com/sunny0826/cms-grafana-builder/releases).
+
+To install the chart with the release name `my-release`:
+
+```bash
+# start
+$ helm install my-release cms-grafana-0.3.1.tgz \
+--namespace {your_namespace} \
+--set access_key_id={your_access_key_id} \
+--set access_secret={your_access_secret} \
+--set region_id={your_aliyun_region_id} \
+--set password={admin_password}
+
+# set ingress and open tls
+helm install my-release cms-grafana-0.3.1.tgz \
+--namespace {your_namespace} \
+--set access_key_id={your_access_key_id} \
+--set access_secret={your_access_secret} \
+--set region_id={your_aliyun_region_id} \
+--set password={admin_password} \
+--set ingress.enabled=true \
+--set ingress.hosts[0].host="{your_host}",ingress.hosts[0].paths[0]="/" \
+--set ingress.tls[0].secretName="{your_tls_secret_name}",ingress.tls[0].hosts[0]="{your_tls_host}"
+```
+__Please resolve the DNS to ingress.__
+
+### Viewing the Grafnan dashboard
+
+To do without ingress, you can use `kubectl port-forward`.
+
+```bash
+kubectl port-forward -n {your_namespace} deployment/my-release-cms-grafana 8080:8080 &
+```
+
+Visit http://localhost:8080 in your web browser.
+
+## Uninstall
+
+To uninstall/delete the `my-release` deployment:
+
+```bash
+$ helm uninstall my-release -n {your_namespace}
+```
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}

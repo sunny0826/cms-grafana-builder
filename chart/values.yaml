@@ -1,16 +1,21 @@
-# Default values for chart.
-
+# replicaCount -- replica count.
 replicaCount: 1
 
-plugins: farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana
-
+# access_key_id -- Aliyun Access Key Id.
 access_key_id: ""
+# access_secret -- Aliyun Access Secret.
 access_secret: ""
+# region_id -- Aliyun Region Id.
 region_id: "cn-shanghai"
+# password -- Grafana admin password.
 password: "admin"
+# plugins -- Grafana plugin list.
+plugins: "farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"
 
 image:
+  # image.repository -- Image source repository name.
   repository: grafana/grafana
+  # image.pullPolicy -- Image pull policy.
   pullPolicy: IfNotPresent
 
 build_image:
@@ -27,18 +32,18 @@ cronjob_image:
   repository: odise/busybox-curl
   tag: latest
 
+# schedule -- CronJob schedule.
 schedule: "30 2 * * *"
-
-nameOverride: ""
-fullnameOverride: ""
 
 service:
   type: ClusterIP
   port: 80
 
 ingress:
+  # ingress.enabled -- Whether to open ingress.
   enabled: false
   annotations: {}
+  # ingress.hosts -- Ingress hosts.
   hosts:
     - host: grafana.chart-example.local
       paths: ['/']
