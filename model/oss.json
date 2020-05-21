@@ -3301,8 +3301,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "{\"BucketName\":\"kk-open-public\"}",
-          "value": "{\"BucketName\":\"kk-open-public\"}"
+          "text": "",
+          "value": ""
         },
         "datasource": "CMS Grafana Service",
         "definition": "dimension(acs_oss_dashboard, Availability,null,null),",

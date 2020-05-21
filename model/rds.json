@@ -34,8 +34,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "title": "概览",
@@ -87,8 +87,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -163,8 +163,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -239,8 +239,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -328,8 +328,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "sparkline": {
@@ -434,8 +434,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "sparkline": {
@@ -516,8 +516,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "title": "基础监控",
@@ -560,8 +560,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -667,8 +667,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -774,8 +774,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -881,8 +881,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -988,8 +988,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod:union-斑马",
-          "value": "prod:union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],

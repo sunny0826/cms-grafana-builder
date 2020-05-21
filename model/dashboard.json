@@ -1221,8 +1221,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "23",
-          "value": "23"
+          "text": "0",
+          "value": "0"
         },
         "datasource": "Variable DataSource",
         "definition": "num(slb)",
@@ -1234,8 +1234,8 @@
         "options": [
           {
             "selected": true,
-            "text": "23",
-            "value": "23"
+            "text": "0",
+            "value": "0"
           }
         ],
         "query": "num(slb)",
