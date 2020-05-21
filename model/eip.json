@@ -449,8 +449,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "prod_斑马来拉SLB:47.102.214.135",
-          "value": "prod_斑马来拉SLB:47.102.214.135"
+          "text": "",
+          "value": ""
         },
         "datasource": "Variable DataSource",
         "definition": "eip",
@@ -459,123 +459,7 @@
         "label": "实例名称",
         "multi": true,
         "name": "name",
-        "options": [
-          {
-            "selected": true,
-            "text": "prod_斑马来拉SLB:47.102.214.135",
-            "value": "prod_斑马来拉SLB:47.102.214.135"
-          },
-          {
-            "selected": false,
-            "text": "prod-openvpn:47.103.206.141",
-            "value": "prod-openvpn:47.103.206.141"
-          },
-          {
-            "selected": false,
-            "text": "prod:k8s-union入口:139.224.110.209",
-            "value": "prod:k8s-union入口:139.224.110.209"
-          },
-          {
-            "selected": false,
-            "text": "prod-斑马-k8s-apiservice:106.15.95.232",
-            "value": "prod-斑马-k8s-apiservice:106.15.95.232"
-          },
-          {
-            "selected": false,
-            "text": "托管:k8s-SLB-访问控制:47.103.142.223",
-            "value": "托管:k8s-SLB-访问控制:47.103.142.223"
-          },
-          {
-            "selected": false,
-            "text": "prod:托管集群:47.102.129.40",
-            "value": "prod:托管集群:47.102.129.40"
-          },
-          {
-            "selected": false,
-            "text": "prod-托管-APIServer:47.103.75.44",
-            "value": "prod-托管-APIServer:47.103.75.44"
-          },
-          {
-            "selected": false,
-            "text": "prod:中原系统:47.103.103.75",
-            "value": "prod:中原系统:47.103.103.75"
-          },
-          {
-            "selected": false,
-            "text": "devops-k8s-入口:47.101.58.216",
-            "value": "devops-k8s-入口:47.101.58.216"
-          },
-          {
-            "selected": false,
-            "text": "devops-k8s-APIServer:47.102.154.52",
-            "value": "devops-k8s-APIServer:47.102.154.52"
-          },
-          {
-            "selected": false,
-            "text": "k8s-test入口-访问控制:47.101.70.132",
-            "value": "k8s-test入口-访问控制:47.101.70.132"
-          },
-          {
-            "selected": false,
-            "text": "k8s-test入口-pub:106.14.225.218",
-            "value": "k8s-test入口-pub:106.14.225.218"
-          },
-          {
-            "selected": false,
-            "text": "ECS_Rancher:47.100.239.249",
-            "value": "ECS_Rancher:47.100.239.249"
-          },
-          {
-            "selected": false,
-            "text": "UAT-集群出口-NAT:106.14.147.51",
-            "value": "UAT-集群出口-NAT:106.14.147.51"
-          },
-          {
-            "selected": false,
-            "text": "SLB_UAT-服务网关2:106.15.201.228",
-            "value": "SLB_UAT-服务网关2:106.15.201.228"
-          },
-          {
-            "selected": false,
-            "text": "SLB_prod-前端:47.100.183.220",
-            "value": "SLB_prod-前端:47.100.183.220"
-          },
-          {
-            "selected": false,
-            "text": "UAT-SLB-服务网关1:47.100.254.3",
-            "value": "UAT-SLB-服务网关1:47.100.254.3"
-          },
-          {
-            "selected": false,
-            "text": "devops-出口-NAT:47.100.243.17",
-            "value": "devops-出口-NAT:47.100.243.17"
-          },
-          {
-            "selected": false,
-            "text": "devops-SLB-入口:47.100.171.18",
-            "value": "devops-SLB-入口:47.100.171.18"
-          },
-          {
-            "selected": false,
-            "text": "生产环境-APPTMS:139.224.133.91",
-            "value": "生产环境-APPTMS:139.224.133.91"
-          },
-          {
-            "selected": false,
-            "text": "生产环境-SLB:106.15.94.2",
-            "value": "生产环境-SLB:106.15.94.2"
-          },
-          {
-            "selected": false,
-            "text": "NAT-UAT环境出口:106.15.178.42",
-            "value": "NAT-UAT环境出口:106.15.178.42"
-          },
-          {
-            "selected": false,
-            "text": "生产环境-出口-NAT:47.100.171.223",
-            "value": "生产环境-出口-NAT:47.100.171.223"
-          }
-        ],
+        "options": [],
         "query": "eip",
         "refresh": 0,
         "regex": "",

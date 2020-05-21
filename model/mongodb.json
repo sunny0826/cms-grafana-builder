@@ -34,8 +34,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "title": "概览",
@@ -88,8 +88,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -165,8 +165,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -242,8 +242,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -329,8 +329,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "sparkline": {
@@ -435,8 +435,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "sparkline": {
@@ -541,8 +541,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "sparkline": {
@@ -647,8 +647,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "sparkline": {
@@ -711,8 +711,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "targets": [
@@ -751,8 +751,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "title": "趋势",
@@ -798,8 +798,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -906,8 +906,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -1014,8 +1014,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -1124,8 +1124,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -1209,8 +1209,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "title": "资源",
@@ -1253,8 +1253,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -1468,8 +1468,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -1578,8 +1578,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -1686,8 +1686,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -2016,8 +2016,8 @@
       "scopedVars": {
         "name": {
           "selected": true,
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         }
       },
       "seriesOverrides": [],
@@ -2099,8 +2099,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "prod-union-斑马",
-          "value": "prod-union-斑马"
+          "text": "",
+          "value": ""
         },
         "datasource": "Variable DataSource",
         "definition": "mongodb",
@@ -2109,48 +2109,7 @@
         "label": "实例名称",
         "multi": false,
         "name": "name",
-        "options": [
-          {
-            "selected": true,
-            "text": "prod-union-斑马",
-            "value": "prod-union-斑马"
-          },
-          {
-            "selected": false,
-            "text": "prod-运输交易中台",
-            "value": "prod-运输交易中台"
-          },
-          {
-            "selected": false,
-            "text": "prod-中原系统-parse",
-            "value": "prod-中原系统-parse"
-          },
-          {
-            "selected": false,
-            "text": "prod-wuliuyun",
-            "value": "prod-wuliuyun"
-          },
-          {
-            "selected": false,
-            "text": "uat-mongoDB",
-            "value": "uat-mongoDB"
-          },
-          {
-            "selected": false,
-            "text": "uat-ltms",
-            "value": "uat-ltms"
-          },
-          {
-            "selected": false,
-            "text": "prod-core2",
-            "value": "prod-core2"
-          },
-          {
-            "selected": false,
-            "text": "prod-core",
-            "value": "prod-core"
-          }
-        ],
+        "options": [],
         "query": "mongodb",
         "refresh": 0,
         "regex": "",
@@ -2199,38 +2158,7 @@
         "label": "操作",
         "multi": false,
         "name": "method",
-        "options": [
-          {
-            "selected": false,
-            "text": "OpInsert",
-            "value": "OpInsert"
-          },
-          {
-            "selected": false,
-            "text": "OpQuery",
-            "value": "OpQuery"
-          },
-          {
-            "selected": false,
-            "text": "OpUpdate",
-            "value": "OpUpdate"
-          },
-          {
-            "selected": false,
-            "text": "OpDelete",
-            "value": "OpDelete"
-          },
-          {
-            "selected": false,
-            "text": "OpGetmore",
-            "value": "OpGetmore"
-          },
-          {
-            "selected": true,
-            "text": "OpCommand",
-            "value": "OpCommand"
-          }
-        ],
+        "options": [],
         "query": "OpInsert, OpQuery, OpUpdate, OpDelete, OpGetmore, OpCommand",
         "skipUrlSync": false,
         "type": "custom"

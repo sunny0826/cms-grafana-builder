@@ -1556,48 +1556,7 @@
         "label": "实例名称",
         "multi": false,
         "name": "name",
-        "options": [
-          {
-            "selected": false,
-            "text": "prod:union-斑马",
-            "value": "prod:union-斑马"
-          },
-          {
-            "selected": false,
-            "text": "prod-Liquidation",
-            "value": "prod-Liquidation"
-          },
-          {
-            "selected": false,
-            "text": "prod:中原系统",
-            "value": "prod:中原系统"
-          },
-          {
-            "selected": false,
-            "text": "prod-wuliuyun-redis",
-            "value": "prod-wuliuyun-redis"
-          },
-          {
-            "selected": false,
-            "text": "uat-redis",
-            "value": "uat-redis"
-          },
-          {
-            "selected": false,
-            "text": "prod-DubboRegisterCenter",
-            "value": "prod-DubboRegisterCenter"
-          },
-          {
-            "selected": false,
-            "text": "prod-hefei",
-            "value": "prod-hefei"
-          },
-          {
-            "selected": true,
-            "text": "prod-redis",
-            "value": "prod-redis"
-          }
-        ],
+        "options": [],
         "query": "redis",
         "refresh": 0,
         "regex": "",

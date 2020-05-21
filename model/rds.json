@@ -1408,8 +1408,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "prod:泛微协同办公系统",
-          "value": "prod:泛微协同办公系统"
+          "text": "",
+          "value": ""
         },
         "datasource": "Variable DataSource",
         "definition": "rds",
@@ -1418,108 +1418,7 @@
         "label": "实例名称",
         "multi": false,
         "name": "name",
-        "options": [
-          {
-            "selected": false,
-            "text": "prod:union-斑马2",
-            "value": "prod:union-斑马2"
-          },
-          {
-            "selected": true,
-            "text": "prod:union-斑马",
-            "value": "prod:union-斑马"
-          },
-          {
-            "selected": false,
-            "text": "prod:泛微协同办公系统",
-            "value": "prod:泛微协同办公系统"
-          },
-          {
-            "selected": false,
-            "text": "prod:core2",
-            "value": "prod:core2"
-          },
-          {
-            "selected": false,
-            "text": "UAT:泛微协同办公",
-            "value": "UAT:泛微协同办公"
-          },
-          {
-            "selected": false,
-            "text": "prod:中原系统.t6-t3",
-            "value": "prod:中原系统.t6-t3"
-          },
-          {
-            "selected": false,
-            "text": "prod:中原系统.yrd",
-            "value": "prod:中原系统.yrd"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db7",
-            "value": "prod:yudianT6db7"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db6",
-            "value": "prod:yudianT6db6"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db5",
-            "value": "prod:yudianT6db5"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db4",
-            "value": "prod:yudianT6db4"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db3",
-            "value": "prod:yudianT6db3"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db2",
-            "value": "prod:yudianT6db2"
-          },
-          {
-            "selected": false,
-            "text": "prod:dmz2",
-            "value": "prod:dmz2"
-          },
-          {
-            "selected": false,
-            "text": "prod:yudianT6db1",
-            "value": "prod:yudianT6db1"
-          },
-          {
-            "selected": false,
-            "text": "uat:shanghai",
-            "value": "uat:shanghai"
-          },
-          {
-            "selected": false,
-            "text": "uat:shanghai2(原tms)",
-            "value": "uat:shanghai2(原tms)"
-          },
-          {
-            "selected": false,
-            "text": "prod:core",
-            "value": "prod:core"
-          },
-          {
-            "selected": false,
-            "text": "prod:app-tms",
-            "value": "prod:app-tms"
-          },
-          {
-            "selected": false,
-            "text": "prod:dmz",
-            "value": "prod:dmz"
-          }
-        ],
+        "options": [],
         "query": "rds",
         "refresh": 0,
         "regex": "",

@@ -3311,68 +3311,7 @@
         "label": "Bucket名称",
         "multi": false,
         "name": "dimension",
-        "options": [
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-open-public\"}",
-            "value": "{\"BucketName\":\"kk-open-public\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"afd-portal\"}",
-            "value": "{\"BucketName\":\"afd-portal\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-portal\"}",
-            "value": "{\"BucketName\":\"kk-portal\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"bm-union\"}",
-            "value": "{\"BucketName\":\"bm-union\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kkfileview\"}",
-            "value": "{\"BucketName\":\"kkfileview\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-frontend\"}",
-            "value": "{\"BucketName\":\"kk-frontend\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-statics-uat\"}",
-            "value": "{\"BucketName\":\"kk-statics-uat\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-action-trail\"}",
-            "value": "{\"BucketName\":\"kk-action-trail\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-apps-logs\"}",
-            "value": "{\"BucketName\":\"kk-apps-logs\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-k8s-oss\"}",
-            "value": "{\"BucketName\":\"kk-k8s-oss\"}"
-          },
-          {
-            "selected": false,
-            "text": "{\"BucketName\":\"kk-oss\"}",
-            "value": "{\"BucketName\":\"kk-oss\"}"
-          },
-          {
-            "selected": true,
-            "text": "{\"BucketName\":\"kk-statics\"}",
-            "value": "{\"BucketName\":\"kk-statics\"}"
-          }
-        ],
+        "options": [],
         "query": "dimension(acs_oss_dashboard, Availability,null,null),",
         "refresh": 0,
         "regex": "",
