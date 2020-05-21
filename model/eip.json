@@ -448,10 +448,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "",
-          "value": ""
-        },
         "datasource": "Variable DataSource",
         "definition": "eip",
         "hide": 0,
@@ -461,7 +457,7 @@
         "name": "name",
         "options": [],
         "query": "eip",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -473,10 +469,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "{'instanceId': 'eip-uf6k5rl09a9hvwyqqlg91'}",
-          "value": "{'instanceId': 'eip-uf6k5rl09a9hvwyqqlg91'}"
-        },
         "datasource": "Variable DataSource",
         "definition": "eip($name)",
         "hide": 2,

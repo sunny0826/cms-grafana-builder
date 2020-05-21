@@ -3300,10 +3300,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "",
-          "value": ""
-        },
         "datasource": "CMS Grafana Service",
         "definition": "dimension(acs_oss_dashboard, Availability,null,null),",
         "hide": 0,
@@ -3313,7 +3309,7 @@
         "name": "dimension",
         "options": [],
         "query": "dimension(acs_oss_dashboard, Availability,null,null),",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,

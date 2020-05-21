@@ -29,10 +29,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "",
-          "value": ""
-        },
         "datasource": "Variable DataSource",
         "definition": "ecs",
         "hide": 0,
@@ -54,10 +50,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "{'instanceId': 'i-uf62t9fty6zv52bllwu8'}",
-          "value": "{'instanceId': 'i-uf62t9fty6zv52bllwu8'}"
-        },
         "datasource": "Variable DataSource",
         "definition": "ecs($name)",
         "hide": 2,
@@ -122,7 +114,13 @@
         "label": "IP",
         "multi": false,
         "name": "ip",
-        "options": [],
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
         "query": "ecs_ip($name)",
         "refresh": 0,
         "regex": "",

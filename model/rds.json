@@ -1317,13 +1317,6 @@
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
-          "scopedVars": {
-            "dimension": {
-              "selected": true,
-              "text": "{\"instanceId\":\"rm-uf67wq194b13n6hx8\"}",
-              "value": "{\"instanceId\":\"rm-uf67wq194b13n6hx8\"}"
-            }
-          },
           "seriesOverrides": [],
           "spaceLength": 10,
           "stack": false,
@@ -1406,11 +1399,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "tags": [],
-          "text": "",
-          "value": ""
-        },
         "datasource": "Variable DataSource",
         "definition": "rds",
         "hide": 0,
@@ -1420,7 +1408,7 @@
         "name": "name",
         "options": [],
         "query": "rds",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -1432,10 +1420,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "{'instanceId': 'rm-uf67wq194b13n6hx8'}",
-          "value": "{'instanceId': 'rm-uf67wq194b13n6hx8'}"
-        },
         "datasource": "Variable DataSource",
         "definition": "rds($name)",
         "hide": 2,

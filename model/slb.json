@@ -2520,10 +2520,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "",
-          "value": ""
-        },
         "datasource": "Variable DataSource",
         "definition": "slb",
         "hide": 0,
