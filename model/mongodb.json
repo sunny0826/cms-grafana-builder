@@ -2098,10 +2098,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "",
-          "value": ""
-        },
         "datasource": "Variable DataSource",
         "definition": "mongodb",
         "hide": 0,
@@ -2111,7 +2107,7 @@
         "name": "name",
         "options": [],
         "query": "mongodb",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -2123,10 +2119,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "{'instanceId': 'dds-uf613f039dbd47f4'}",
-          "value": "{'instanceId': 'dds-uf613f039dbd47f4'}"
-        },
         "datasource": "Variable DataSource",
         "definition": "mongodb($name)",
         "hide": 2,
