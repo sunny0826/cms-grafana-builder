@@ -1558,7 +1558,7 @@
         "name": "name",
         "options": [],
         "query": "redis",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -1570,10 +1570,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "{'instanceId': 'r-uf6f1f646ea15bb4'}",
-          "value": "{'instanceId': 'r-uf6f1f646ea15bb4'}"
-        },
         "datasource": "Variable DataSource",
         "definition": "redis($name)",
         "hide": 2,

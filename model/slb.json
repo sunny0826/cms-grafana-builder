@@ -2521,8 +2521,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "prod-内网-服务网关",
-          "value": "prod-内网-服务网关"
+          "text": "",
+          "value": ""
         },
         "datasource": "Variable DataSource",
         "definition": "slb",
@@ -2546,8 +2546,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "{'instanceId': 'lb-uf6sgz9gx4hjmc7h7g8fa'}",
-          "value": "{'instanceId': 'lb-uf6sgz9gx4hjmc7h7g8fa'}"
+          "text": "",
+          "value": ""
         },
         "datasource": "Variable DataSource",
         "definition": "slb($name)",
