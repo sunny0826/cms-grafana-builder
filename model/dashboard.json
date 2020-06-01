@@ -1021,7 +1021,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "流入带宽",
+      "title": "流出带宽",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1123,7 +1123,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "流出带宽",
+      "title": "流入带宽",
       "tooltip": {
         "shared": true,
         "sort": 0,
