@@ -106,34 +106,52 @@ def query():
             cpu_list = mon.query_cpu_top()
             for i in range(10):
                 datapoints = [[cpu_list[i]['Average'], cpu_list[i]['timestamp']]]
-                name = get_instance_name(cpu_list[i]['instanceId'])
+                try:
+                    name = get_instance_name(cpu_list[i]['instanceId'])
+                except IndexError:
+                    name = cpu_list[i]['instanceId']
                 body.append({'target': name, 'datapoints': datapoints})
         elif name == 'mem_top_10':
             mem_list = mon.query_mem_top()
             for i in range(10):
                 datapoints = [[mem_list[i]['Average'], mem_list[i]['timestamp']]]
-                name = get_instance_name(mem_list[i]['instanceId'])
+                try:
+                    name = get_instance_name(mem_list[i]['instanceId'])
+                except IndexError:
+                    name = mem_list[i]['instanceId']
                 body.append({'target': name, 'datapoints': datapoints})
         elif name == 'disk_top_10':
             disk_list = mon.query_disk_top()
             for i in range(10):
                 datapoints = [[disk_list[i]['Average'], disk_list[i]['timestamp']]]
-                name = get_instance_name(disk_list[i]['instanceId'])
+                try:
+                    name = get_instance_name(disk_list[i]['instanceId'])
+                except IndexError:
+                    name = disk_list[i]['instanceId']
                 body.append({'target': name, 'datapoints': datapoints})
         elif name == 'cpu_top':
             cpu_list = mon.query_cpu_top()
             datapoints = [[cpu_list[0]['Average'], cpu_list[0]['timestamp']]]
-            name = get_instance_name(cpu_list[0]['instanceId'])
+            try:
+                name = get_instance_name(cpu_list[0]['instanceId'])
+            except IndexError:
+                name = cpu_list[0]['instanceId']
             body.append({'target': name, 'datapoints': datapoints})
         elif name == 'mem_top':
             mem_list = mon.query_mem_top()
             datapoints = [[mem_list[0]['Average'], mem_list[0]['timestamp']]]
-            name = get_instance_name(mem_list[0]['instanceId'])
+            try:
+                name = get_instance_name(mem_list[0]['instanceId'])
+            except IndexError:
+                name = mem_list[0]['instanceId']
             body.append({'target': name, 'datapoints': datapoints})
         elif name == 'disk_top':
             disk_list = mon.query_disk_top()
             datapoints = [[disk_list[0]['Average'], disk_list[0]['timestamp']]]
-            name = get_instance_name(disk_list[0]['instanceId'])
+            try:
+                name = get_instance_name(disk_list[0]['instanceId'])
+            except IndexError:
+                name = disk_list[0]['instanceId']
             body.append({'target': name, 'datapoints': datapoints})
 
     body = dumps(body)
