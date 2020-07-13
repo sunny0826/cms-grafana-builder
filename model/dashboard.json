@@ -1167,7 +1167,7 @@
         "h": 3,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 26
       },
       "id": 30,
       "options": {},
@@ -1188,7 +1188,7 @@
       ],
       "themes": [
         {
-          "name": "Night Theme",
+          "name": "Start Theme",
           "styles": [
             {
               "props": {
@@ -1211,7 +1211,7 @@
           ]
         },
         {
-          "name": "Aquamarine",
+          "name": "Aquamarine Theme",
           "styles": [
             {
               "props": {
@@ -1240,7 +1240,7 @@
           ]
         },
         {
-          "name": "Hotline",
+          "name": "Hotline Theme",
           "styles": [
             {
               "props": {
@@ -1269,7 +1269,7 @@
           ]
         },
         {
-          "name": "Dark",
+          "name": "Dark Theme",
           "styles": [
             {
               "props": {
@@ -1298,7 +1298,7 @@
           ]
         },
         {
-          "name": "Plex",
+          "name": "Plex Theme",
           "styles": [
             {
               "props": {
@@ -1327,7 +1327,7 @@
           ]
         },
         {
-          "name": "Space Gray",
+          "name": "Space Gray Theme",
           "styles": [
             {
               "props": {
@@ -1356,7 +1356,7 @@
           ]
         },
         {
-          "name": "Organizr",
+          "name": "Organizr Theme",
           "styles": [
             {
               "props": {
