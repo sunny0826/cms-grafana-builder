@@ -10,7 +10,7 @@ region_id: "cn-shanghai"
 # password -- Grafana admin password.
 password: "admin"
 # plugins -- Grafana plugin list.
-plugins: "farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"
+plugins: "farski-blendstat-panel,grafana-simple-json-datasource,yesoreyeram-boomtheme-panel,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"
 
 image:
   # image.repository -- Image source repository name.
