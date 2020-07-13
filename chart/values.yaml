@@ -20,12 +20,12 @@ image:
 
 build_image:
   repository: guoxudongdocker/grafana-build
-  tag: 0.4.0-release
+  tag: 0.4.1-release
   pullPolicy: Always
 
 backend_image:
   repository: guoxudongdocker/grafana-build
-  tag: 0.4.0-release
+  tag: 0.4.1-release
   pullPolicy: Always
 
 cronjob_image:
