@@ -18,18 +18,13 @@ image:
   # image.pullPolicy -- Image pull policy.
   pullPolicy: IfNotPresent
 
-build_image:
-  repository: guoxudongdocker/grafana-build
-  tag: 0.4.2
-  pullPolicy: Always
-
 backend_image:
   repository: guoxudongdocker/grafana-build
   tag: 0.4.2
   pullPolicy: Always
 
 cronjob_image:
-  repository: odise/busybox-curl
+  repository: guoxudongdocker/curl
   tag: latest
 
 # schedule -- CronJob schedule.

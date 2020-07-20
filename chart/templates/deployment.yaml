@@ -19,8 +19,8 @@ spec:
       serviceAccountName: {{ template "kk-grafana-cms.fullname" . }}-sa
       initContainers:
       - name: init
-        image: "{{ .Values.build_image.repository}}:{{ .Values.build_image.tag }}"
-        imagePullPolicy: {{ .Values.build_image.pullPolicy }}
+        image: "{{ .Values.backend_image.repository}}:{{ .Values.backend_image.tag }}"
+        imagePullPolicy: {{ .Values.backend_image.pullPolicy }}
         env:
         - name: ACCESS_KEY_ID
           valueFrom:
