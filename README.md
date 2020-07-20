@@ -15,20 +15,20 @@ This chart helps you run a grafana server that include aliyun cms dashboard.
 You can use the `docker` to experience the full functionality, with this should only be applied to local, production environments please use `helm`.
 
 ```bash
-docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.4.1-release
+docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.4.2-release
 ```
 
 ## Installing the Chart
 
 ### Helm v3
 
-Download `cms-grafana-0.4.1.tgz` package to install in [release](https://github.com/sunny0826/cms-grafana-builder/releases).
+Download `cms-grafana-0.4.2.tgz` package to install in [release](https://github.com/sunny0826/cms-grafana-builder/releases).
 
 To install the chart with the release name `my-release`:
 
 ```bash
 # start
-$ helm install my-release cms-grafana-0.4.1.tgz \
+$ helm install my-release cms-grafana-0.4.2.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -36,7 +36,7 @@ $ helm install my-release cms-grafana-0.4.1.tgz \
 --set password={admin_password}
 
 # set ingress and open tls
-helm install my-release cms-grafana-0.4.1.tgz \
+helm install my-release cms-grafana-0.4.2.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
