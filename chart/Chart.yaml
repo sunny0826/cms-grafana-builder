@@ -3,7 +3,7 @@ name: cms-grafana
 description: Aliyun CMS Grafana Dashboard
 type: application
 version: 0.4.1
-appVersion: 6.4.2
+appVersion: 7.1.0
 keywords:
 - grafana
 - aliyun

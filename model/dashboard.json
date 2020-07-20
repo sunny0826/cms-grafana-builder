@@ -1000,7 +1000,7 @@
         {
           "describe": "",
           "dimensions": [
-            "$all_eip"
+            "$all_eip",","
           ],
           "group": "",
           "metric": "net_tx.rate",
@@ -1102,7 +1102,7 @@
         {
           "describe": "",
           "dimensions": [
-            "$all_eip"
+            "$all_eip",","
           ],
           "group": "",
           "metric": "net_rx.rate",
@@ -1558,8 +1558,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "{\"instanceId\":\"eip-uf600fv0ky7md2qlacibu\"},{\"instanceId\":\"eip-uf60ky3jyjb8j167d6wei\"},{\"instanceId\":\"eip-uf60t4a1kihas9ptzd7b2\"},{\"instanceId\":\"eip-uf63ax8cjdhehqi7mdmic\"},{\"instanceId\":\"eip-uf63cfwzb1o42qr6tgzym\"},{\"instanceId\":\"eip-uf64zp0z0u6bcuet36nu5\"},{\"instanceId\":\"eip-uf65m0vvbm5e5yf5qag69\"},{\"instanceId\":\"eip-uf67dcshu09ctldmc17zd\"},{\"instanceId\":\"eip-uf685vo9xktsfkf1xac6v\"},{\"instanceId\":\"eip-uf6c4ij306f5oarsp4g3w\"},{\"instanceId\":\"eip-uf6cagz1gjv7rjgyakctf\"},{\"instanceId\":\"eip-uf6dq9peo5wjxg1m6p9e9\"},{\"instanceId\":\"eip-uf6dqf58ekfo4yitd3asm\"},{\"instanceId\":\"eip-uf6jl3uk0s71n14d5exk7\"},{\"instanceId\":\"eip-uf6k5rl09a9hvwyqqlg91\"},{\"instanceId\":\"eip-uf6kz1vht4rfpggotow5j\"},{\"instanceId\":\"eip-uf6mxv9w9qsqhmxtnoe68\"},{\"instanceId\":\"eip-uf6n6dgz3e3lvt5ydqelm\"},{\"instanceId\":\"eip-uf6pmboslnm5g6rk5y136\"},{\"instanceId\":\"eip-uf6qwyht76lyp4kh1sdk1\"},{\"instanceId\":\"eip-uf6t9vcki4qyppqsdavaz\"},{\"instanceId\":\"eip-uf6tmmp2ykqcoblz167l4\"},{\"instanceId\":\"eip-uf6toavm5dmmzngilp1nt\"}",
-          "value": "{\"instanceId\":\"eip-uf600fv0ky7md2qlacibu\"},{\"instanceId\":\"eip-uf60ky3jyjb8j167d6wei\"},{\"instanceId\":\"eip-uf60t4a1kihas9ptzd7b2\"},{\"instanceId\":\"eip-uf63ax8cjdhehqi7mdmic\"},{\"instanceId\":\"eip-uf63cfwzb1o42qr6tgzym\"},{\"instanceId\":\"eip-uf64zp0z0u6bcuet36nu5\"},{\"instanceId\":\"eip-uf65m0vvbm5e5yf5qag69\"},{\"instanceId\":\"eip-uf67dcshu09ctldmc17zd\"},{\"instanceId\":\"eip-uf685vo9xktsfkf1xac6v\"},{\"instanceId\":\"eip-uf6c4ij306f5oarsp4g3w\"},{\"instanceId\":\"eip-uf6cagz1gjv7rjgyakctf\"},{\"instanceId\":\"eip-uf6dq9peo5wjxg1m6p9e9\"},{\"instanceId\":\"eip-uf6dqf58ekfo4yitd3asm\"},{\"instanceId\":\"eip-uf6jl3uk0s71n14d5exk7\"},{\"instanceId\":\"eip-uf6k5rl09a9hvwyqqlg91\"},{\"instanceId\":\"eip-uf6kz1vht4rfpggotow5j\"},{\"instanceId\":\"eip-uf6mxv9w9qsqhmxtnoe68\"},{\"instanceId\":\"eip-uf6n6dgz3e3lvt5ydqelm\"},{\"instanceId\":\"eip-uf6pmboslnm5g6rk5y136\"},{\"instanceId\":\"eip-uf6qwyht76lyp4kh1sdk1\"},{\"instanceId\":\"eip-uf6t9vcki4qyppqsdavaz\"},{\"instanceId\":\"eip-uf6tmmp2ykqcoblz167l4\"},{\"instanceId\":\"eip-uf6toavm5dmmzngilp1nt\"}"
+          "text": "",
+          "value": ""
         },
         "datasource": "Variable DataSource",
         "definition": "all(eip)",
