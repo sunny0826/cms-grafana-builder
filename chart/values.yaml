@@ -20,7 +20,7 @@ image:
 
 backend_image:
   repository: guoxudongdocker/grafana-build
-  tag: 0.4.2
+  tag: 0.4.3-rc1
   pullPolicy: Always
 
 cronjob_image:

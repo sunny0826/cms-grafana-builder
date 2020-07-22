@@ -3446,6 +3446,237 @@
       },
       "title": "网络",
       "type": "row"
+    },
+    {
+      "activeThemeId": 1,
+      "datasource": null,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
+      "id": 30,
+      "options": {},
+      "targets": [
+        {
+          "describe": "",
+          "dimensions": [],
+          "group": "",
+          "metric": "",
+          "period": "",
+          "project": "acs_ecs_dashboard",
+          "refId": "A",
+          "target": [],
+          "type": "timeserie",
+          "xcol": "timestamp",
+          "ycol": []
+        }
+      ],
+      "themes": [
+        {
+          "name": "Start Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": "https://images.unsplash.com/photo-1524334228333-0f6db392f8a1"
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "text": ".panel-container {\n    background-color: rgba(0,0,0,0.3);\n}"
+              },
+              "type": "style"
+            }
+          ]
+        },
+        {
+          "name": "Aquamarine Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": ""
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/aquamarine.css"
+              },
+              "type": "url"
+            },
+            {
+              "props": {
+                "text": ""
+              },
+              "type": "style"
+            }
+          ]
+        },
+        {
+          "name": "Hotline Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": ""
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/hotline.css"
+              },
+              "type": "url"
+            },
+            {
+              "props": {
+                "text": ""
+              },
+              "type": "style"
+            }
+          ]
+        },
+        {
+          "name": "Dark Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": ""
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/dark.css"
+              },
+              "type": "url"
+            },
+            {
+              "props": {
+                "text": ""
+              },
+              "type": "style"
+            }
+          ]
+        },
+        {
+          "name": "Plex Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": ""
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/plex.css"
+              },
+              "type": "url"
+            },
+            {
+              "props": {
+                "text": ""
+              },
+              "type": "style"
+            }
+          ]
+        },
+        {
+          "name": "Space Gray Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": ""
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/space-gray.css"
+              },
+              "type": "url"
+            },
+            {
+              "props": {
+                "text": ""
+              },
+              "type": "style"
+            }
+          ]
+        },
+        {
+          "name": "Organizr Theme",
+          "styles": [
+            {
+              "props": {
+                "theme": "default"
+              },
+              "type": "basetheme"
+            },
+            {
+              "props": {
+                "url": ""
+              },
+              "type": "bgimage"
+            },
+            {
+              "props": {
+                "url": "https://gilbn.github.io/theme.park/CSS/themes/grafana/organizr-dashboard.css"
+              },
+              "type": "url"
+            },
+            {
+              "props": {
+                "text": ""
+              },
+              "type": "style"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "yesoreyeram-boomtheme-panel"
     }
   ],
   "schemaVersion": 20,

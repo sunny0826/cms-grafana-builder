@@ -502,24 +502,18 @@
     },
     {
       "datasource": "Variable DataSource",
-      "gridPos": {
-        "h": 22,
-        "w": 4,
-        "x": 16,
-        "y": 4
-      },
-      "id": 2,
-      "options": {
-        "displayMode": "gradient",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": [
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
               {
                 "color": "green",
                 "value": null
@@ -532,16 +526,32 @@
                 "color": "red",
                 "value": 90
               }
-            ],
-            "title": "",
-            "unit": "percent"
+            ]
           },
-          "override": {},
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 22,
+        "w": 4,
+        "x": 16,
+        "y": 4
+      },
+      "id": 2,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
-      "pluginVersion": "6.4.2",
+      "pluginVersion": "7.1.0",
       "targets": [
         {
           "refId": "A",
@@ -556,24 +566,18 @@
     },
     {
       "datasource": "Variable DataSource",
-      "gridPos": {
-        "h": 22,
-        "w": 4,
-        "x": 20,
-        "y": 4
-      },
-      "id": 3,
-      "options": {
-        "displayMode": "gradient",
-        "fieldOptions": {
-          "calcs": [
-            "first"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": [
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
               {
                 "color": "green",
                 "value": null
@@ -586,16 +590,32 @@
                 "color": "red",
                 "value": 90
               }
-            ],
-            "title": "",
-            "unit": "percent"
+            ]
           },
-          "override": {},
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 22,
+        "w": 4,
+        "x": 20,
+        "y": 4
+      },
+      "id": 3,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "first"
+          ],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
-      "pluginVersion": "6.4.2",
+      "pluginVersion": "7.1.0",
       "targets": [
         {
           "refId": "A",
@@ -619,6 +639,12 @@
       ],
       "datasource": null,
       "decimals": 2,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "short",
       "gauge": {
         "maxValue": 100,
@@ -650,7 +676,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -708,24 +733,18 @@
     },
     {
       "datasource": "Variable DataSource",
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 10
-      },
-      "id": 4,
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": [
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
               {
                 "color": "green",
                 "value": null
@@ -738,16 +757,32 @@
                 "color": "red",
                 "value": 90
               }
-            ],
-            "title": "",
-            "unit": "percent"
+            ]
           },
-          "override": {},
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 4,
+      "options": {
+        "displayMode": "lcd",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
           "values": false
         },
-        "orientation": "vertical"
+        "showUnfilled": true
       },
-      "pluginVersion": "6.4.2",
+      "pluginVersion": "7.1.0",
       "targets": [
         {
           "refId": "A",

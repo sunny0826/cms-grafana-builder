@@ -11,7 +11,7 @@ steps:
       from_secret: docker_pass
     repo: guoxudongdocker/grafana-build
     tags:
-    - 0.4.2
+    - 0.4.3-rc1
 
 - name: all-in-one
   image: plugins/docker
@@ -23,4 +23,4 @@ steps:
     dockerfile: all-in-one/Dockerfile
     repo: guoxudongdocker/grafana-cms-run
     tags:
-    - 0.4.2
+    - 0.4.3-rc1
