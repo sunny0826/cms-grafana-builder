@@ -6,7 +6,7 @@ cms-grafana
 
 Aliyun CMS Grafana Dashboard
 
-Current chart version is `0.4.3`
+Current chart version is `0.5.0`
 
 
 
@@ -19,20 +19,20 @@ Current chart version is `0.4.3`
 你可以使用 `docker` 来快速体验全部功能，但这只适用于本地测试，并没有定时刷新资源信息等功能。在生产环境请使用 `helm` 部署。
 
 ```bash
-docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.4.3
+docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.5.0
 ```
 
 ## 使用 Helm 安装
 
 ### Helm v3
 
-在 [release](https://github.com/sunny0826/cms-grafana-builder/releases) 页面下载 `cms-grafana-0.4.3.tgz` 包。
+在 [release](https://github.com/sunny0826/cms-grafana-builder/releases) 页面下载 `cms-grafana-0.5.0.tgz` 包。
 
 使用 `my-release` 名称安装：
 
 ```bash
 # start
-$ helm install my-release cms-grafana-0.4.3.tgz \
+$ helm install my-release cms-grafana-0.5.0.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
@@ -40,7 +40,7 @@ $ helm install my-release cms-grafana-0.4.3.tgz \
 --set password={admin_password}
 
 # 设置 ingress 和 SSL 证书
-helm install my-release cms-grafana-0.4.3.tgz \
+helm install my-release cms-grafana-0.5.0.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
 --set access_secret={your_access_secret} \
