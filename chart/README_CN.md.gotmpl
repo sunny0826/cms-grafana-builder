@@ -1,5 +1,5 @@
 {{ template "chart.header" . }}
-English | [简体中文](README_CN.md)
+[English](README.md) | 简体中文
 
 ![grafana](https://raw.githubusercontent.com/grafana/grafana/master/docs/logo-horizontal.png)
 
@@ -9,25 +9,25 @@ English | [简体中文](README_CN.md)
 
 {{ template "chart.sourceLinkLine" . }}
 
-## Introduction
+## 介绍
 
-This chart helps you run a grafana server that include aliyun cms dashboard.
+运行部署 grafana 并展示一整套阿里云监控的仪表盘。
 
-## Quick Start
+## 快速开始
 
-You can use the `docker` to experience the full functionality, with this should only be applied to local, production environments please use `helm`.
+你可以使用 `docker` 来快速体验全部功能，但这只适用于本地测试，并没有定时刷新资源信息等功能。在生产环境请使用 `helm` 部署。
 
 ```bash
 docker run -d -p 3000:3000 -e ACCESS_KEY_ID={your_access_key_id} -e ACCESS_SECRET={your_access_secret}  guoxudongdocker/grafana-cms-run:0.4.3
 ```
 
-## Installing the Chart
+## 使用 Helm 安装
 
 ### Helm v3
 
-Download `cms-grafana-0.4.3.tgz` package to install in [release](https://github.com/sunny0826/cms-grafana-builder/releases).
+在 [release](https://github.com/sunny0826/cms-grafana-builder/releases) 页面下载 `cms-grafana-0.4.3.tgz` 包。
 
-To install the chart with the release name `my-release`:
+使用 `my-release` 名称安装：
 
 ```bash
 # start
@@ -38,7 +38,7 @@ $ helm install my-release cms-grafana-0.4.3.tgz \
 --set region_id={your_aliyun_region_id} \
 --set password={admin_password}
 
-# set ingress and open tls
+# 设置 ingress 和 SSL 证书
 helm install my-release cms-grafana-0.4.3.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
@@ -49,21 +49,19 @@ helm install my-release cms-grafana-0.4.3.tgz \
 --set ingress.hosts[0].host="{your_host}",ingress.hosts[0].paths[0]="/" \
 --set ingress.tls[0].secretName="{your_tls_secret_name}",ingress.tls[0].hosts[0]="{your_tls_host}"
 ```
-__Please resolve the DNS to ingress.__
+__请将 DNS 解析到该 ingress。__
 
-### Viewing the Grafnan dashboard
+### 查看 Grafnan dashboard
 
-To do without ingress, you can use `kubectl port-forward`.
+如果不想使用 ingress，可以使用 `kubectl port-forward` 命令：
 
 ```bash
 kubectl port-forward -n {your_namespace} deployment/my-release-cms-grafana 8080:8080 &
 ```
 
-Visit http://localhost:8080 in your web browser.
+在浏览器中访问 http://localhost:8080。
 
-## Uninstall
-
-To uninstall/delete the `my-release` deployment:
+## 卸载
 
 ```bash
 $ helm uninstall my-release -n {your_namespace}

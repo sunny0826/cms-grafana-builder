@@ -41,3 +41,12 @@ helm-clean:
 	rm -rf cms-grafana-*
 	# uninstall helm chart
 	helm uninstall test
+
+show:
+	kubectl port-forward svc/test-cms-grafana 8080:80
+
+generate-docs:
+	helm-docs -o README_CN.md -t README_CN.md.gotmpl
+	helm-docs -o README.md -t README.md.gotmpl
+	mv chart/README.md .
+	mv chart/README_CN.md .

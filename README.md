@@ -1,10 +1,14 @@
-# cms-grafana-builder
-
+cms-grafana
+===========
 English | [简体中文](README_CN.md)
 
 ![grafana](https://raw.githubusercontent.com/grafana/grafana/master/docs/logo-horizontal.png)
 
-The open-source platform for monitoring and observability.
+Aliyun CMS Grafana Dashboard
+
+Current chart version is `0.4.3`
+
+
 
 ## Introduction
 
@@ -66,29 +70,43 @@ To uninstall/delete the `my-release` deployment:
 $ helm uninstall my-release -n {your_namespace}
 ```
 
-## Configuration
 
-The following table lists the configurable parameters of the kk-grafana-cms chart and their default values.
 
-Parameter                 	 	| Description                        				| Default
-------------------------------- | ------------------------------------------------- | ----------------------------------------------------------
-`plugins`           	        | Grafana plugin list.         	            		| `farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana`
-`access_key_id`                	| Aliyun Access Key Id.                  			| ``
-`access_secret`                	| Aliyun Access Secret.                  			| ``
-`region_id`                    	| Aliyun Region Id.                        			| `cn-shanghai`
-`password`                    	| Grafana admin password.                  			| `admin`
-`schedule`                    	| CronJob schedule.                     			| `"30 2 * * *"`
-`anonymous`                    	| Grafana auth anonymous enables.             		| `"false"`
-`image.repository`           	| Image source repository name.         			| `grafana/grafana`
-`image.pullPolicy`         		| Image pull policy.                  				| `Always`
-`build_image.repository`        | Build image source repository name.         	    | `guoxudongdocker/grafana-build`
-`build_image.tag`              	| Image tag.                    		  	    	| `0.2.1-release`
-`build_image.pullPolicy`       	| Image pull policy.                 				| `Always`
-`backend_image.repository`      | Datasource image source repository name.          | `guoxudongdocker/grafana-build`
-`backend_image.tag`             | Image tag.                        		    	| `0.2.1-release`
-`backend_image.pullPolicy`      | Image pull policy.                         		| `Always`
-`ingress.enabled`         		| Whether to open ingress.             				| `false`
-`ingress.hosts`          		| Ingress hosts.                       				| `[]`
+## Chart Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| access_key_id | string | `""` | Aliyun Access Key Id. |
+| access_secret | string | `""` | Aliyun Access Secret. |
+| affinity | object | `{}` |  |
+| anonymous | bool | `false` |  |
+| backend_image.pullPolicy | string | `"Always"` |  |
+| backend_image.repository | string | `"guoxudongdocker/grafana-build"` |  |
+| backend_image.tag | string | `"0.5.0"` |  |
+| backend_resources.limits.cpu | string | `"200m"` |  |
+| backend_resources.limits.memory | string | `"256Mi"` |  |
+| backend_resources.requests.cpu | string | `"100m"` |  |
+| backend_resources.requests.memory | string | `"256Mi"` |  |
+| cronjob_image.repository | string | `"guoxudongdocker/curl"` |  |
+| cronjob_image.tag | string | `"latest"` |  |
+| image.pullPolicy | string | `"IfNotPresent"` | Image pull policy. |
+| image.repository | string | `"grafana/grafana"` | Image source repository name. |
+| ingress.annotations | object | `{}` |  |
+| ingress.enabled | bool | `false` | Whether to open ingress. |
+| ingress.hosts | list | `[{"host":"grafana.chart-example.local","paths":["/"]}]` | Ingress hosts. |
+| ingress.tls | list | `[]` |  |
+| nodeSelector | object | `{}` |  |
+| password | string | `"admin"` | Grafana admin password. |
+| plugins | string | `"farski-blendstat-panel,grafana-simple-json-datasource,yesoreyeram-boomtheme-panel,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"` | Grafana plugin list. |
+| region_id | string | `"cn-shanghai"` | Aliyun Region Id. |
+| replicaCount | int | `1` | replica count. |
+| resources.limits.cpu | string | `"200m"` |  |
+| resources.limits.memory | string | `"256Mi"` |  |
+| resources.requests.cpu | string | `"100m"` |  |
+| resources.requests.memory | string | `"256Mi"` |  |
+| schedule | string | `"30 2 * * *"` | CronJob schedule. |
+| service.port | int | `80` |  |
+| service.type | string | `"ClusterIP"` |  |
 
 ### Dashboard
 
@@ -118,4 +136,3 @@ Parameter                 	 	| Description                        				| Default
 
 ### Redis
 ![redis](docs/image/redis.png)
-

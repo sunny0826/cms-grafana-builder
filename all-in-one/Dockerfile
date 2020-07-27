@@ -22,7 +22,7 @@ ENV GF_AUTH_ANONYMOUS_ENABLED=true
 ENV GF_AUTH_BASIC_ENABLED=true
 
 RUN mkdir /var/lib/grafana/cms-dashboards \
-&& cp -r /app/model/* /var/lib/grafana/cms-dashboards \
+&& cp -r /app/chart/model/* /var/lib/grafana/cms-dashboards \
 && cp all-in-one/datasources.yaml /etc/grafana/provisioning/datasources/ \
 && cp all-in-one/dashboards.yaml /etc/grafana/provisioning/dashboards/
 

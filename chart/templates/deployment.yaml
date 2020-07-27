@@ -17,32 +17,6 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ template "kk-grafana-cms.fullname" . }}-sa
-{{/*      initContainers:*/}}
-{{/*      - name: init*/}}
-{{/*        image: "{{ .Values.backend_image.repository}}:{{ .Values.backend_image.tag }}"*/}}
-{{/*        imagePullPolicy: {{ .Values.backend_image.pullPolicy }}*/}}
-{{/*        env:*/}}
-{{/*        - name: ACCESS_KEY_ID*/}}
-{{/*          valueFrom:*/}}
-{{/*            secretKeyRef:*/}}
-{{/*              name: {{ template "cms-secret.fullname" . }}*/}}
-{{/*              key: accessKeyId*/}}
-{{/*        - name: ACCESS_SECRET*/}}
-{{/*          valueFrom:*/}}
-{{/*            secretKeyRef:*/}}
-{{/*              name: {{ template "cms-secret.fullname" . }}*/}}
-{{/*              key: accessSecret*/}}
-{{/*        - name: REGION_ID*/}}
-{{/*          value: {{ .Values.region_id }}*/}}
-{{/*        - name: INIT_POD_NAMESPACE*/}}
-{{/*          valueFrom:*/}}
-{{/*            fieldRef:*/}}
-{{/*              apiVersion: v1*/}}
-{{/*              fieldPath: metadata.namespace*/}}
-{{/*        command: ["/bin/sh", "-c", "cp -r /app/model/* /var/lib/grafana/cms-dashboards"]*/}}
-{{/*        volumeMounts:*/}}
-{{/*          - mountPath: /var/lib/grafana/cms-dashboards*/}}
-{{/*            name: workdir*/}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
@@ -53,7 +27,7 @@ spec:
           - name: GF_SECURITY_ADMIN_PASSWORD__FILE
             value: "/var/local/secrets/admin_password"
           - name: GF_AUTH_ANONYMOUS_ENABLED
-            value: {{ .Values.anonymous }}
+            value: {{ .Values.anonymous | quote }}
           - name: GF_AUTH_BASIC_ENABLED
             value: "true"
           ports:
@@ -115,8 +89,6 @@ spec:
 {{ toYaml . | indent 8 }}
     {{- end }}
       volumes:
-{{/*      - emptyDir: {}*/}}
-{{/*        name: workdir*/}}
       - emptyDir: {}
         name: grafana-storage
       - name: datasource

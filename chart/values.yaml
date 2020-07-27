@@ -12,7 +12,7 @@ password: "admin"
 # plugins -- Grafana plugin list.
 plugins: "farski-blendstat-panel,grafana-simple-json-datasource,yesoreyeram-boomtheme-panel,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"
 # grafana auth anonymous enables
-anonymous: "false"
+anonymous: false
 
 image:
   # image.repository -- Image source repository name.
@@ -22,7 +22,7 @@ image:
 
 backend_image:
   repository: guoxudongdocker/grafana-build
-  tag: 0.4.3
+  tag: 0.5.0
   pullPolicy: Always
 
 cronjob_image:

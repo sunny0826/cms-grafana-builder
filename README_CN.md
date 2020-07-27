@@ -1,10 +1,14 @@
-# cms-grafana-builder
-
+cms-grafana
+===========
 [English](README.md) | 简体中文
 
 ![grafana](https://raw.githubusercontent.com/grafana/grafana/master/docs/logo-horizontal.png)
 
-基于开源的监控和可视化组件 grafana，展示阿里云监控数据。
+Aliyun CMS Grafana Dashboard
+
+Current chart version is `0.4.3`
+
+
 
 ## 介绍
 
@@ -35,7 +39,7 @@ $ helm install my-release cms-grafana-0.4.3.tgz \
 --set region_id={your_aliyun_region_id} \
 --set password={admin_password}
 
-# 设置 ingress 和 SSL 证书 
+# 设置 ingress 和 SSL 证书
 helm install my-release cms-grafana-0.4.3.tgz \
 --namespace {your_namespace} \
 --set access_key_id={your_access_key_id} \
@@ -64,31 +68,43 @@ kubectl port-forward -n {your_namespace} deployment/my-release-cms-grafana 8080:
 $ helm uninstall my-release -n {your_namespace}
 ```
 
-## 配置
 
-配置参数：
 
-参数                       	 	| 说明                                				| 默认值
-------------------------------- | ------------------------------------------------- | ----------------------------------------------------------
-`plugins`           	        | Grafana 插件列表。          	            		| `farski-blendstat-panel,grafana-simple-json-datasource,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana`
-`access_key_id`                	| 阿里云 Access Key Id。                  			| ``
-`access_secret`                	| 阿里云 Access Secret。                  			| ``
-`region_id`                    	| 阿里云 Region Id。                       			| `cn-shanghai`
-`password`                    	| Grafana admin 密码。                      			| `admin`
-`schedule`                    	| 定时任务配置。                            			| `"30 2 * * *"`
-`anonymous`                    	| 是否可以匿名查看 grafana Dashboard。                 | `"false"`
-`image.repository`           	| 镜像 repository 名称。         	            		| `grafana/grafana`
-`image.pullPolicy`         		| 镜像拉取策略。                        				| `Always`
-`build_image.repository`        | init 镜像。                                  	    | `guoxudongdocker/grafana-build`
-`build_image.tag`              	| 镜像 tag。                       		  	    	| `0.2.1-release`
-`build_image.pullPolicy`       	| 镜像拉取策略。                          				| `Always`
-`backend_image.repository`      | 自定义数据源镜像。                                   | `guoxudongdocker/grafana-build`
-`backend_image.tag`             | 镜像 tag。                       		  	    	| `0.2.1-release`
-`backend_image.pullPolicy`      | 镜像拉取策略。                          				| `Always`
-`ingress.enabled`         		| 是否开启 ingress.                   				| `false`
-`ingress.hosts`          		| Ingress hosts.                       				| `[]`
+## Chart Values
 
-## 截图
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| access_key_id | string | `""` | Aliyun Access Key Id. |
+| access_secret | string | `""` | Aliyun Access Secret. |
+| affinity | object | `{}` |  |
+| anonymous | bool | `false` |  |
+| backend_image.pullPolicy | string | `"Always"` |  |
+| backend_image.repository | string | `"guoxudongdocker/grafana-build"` |  |
+| backend_image.tag | string | `"0.5.0"` |  |
+| backend_resources.limits.cpu | string | `"200m"` |  |
+| backend_resources.limits.memory | string | `"256Mi"` |  |
+| backend_resources.requests.cpu | string | `"100m"` |  |
+| backend_resources.requests.memory | string | `"256Mi"` |  |
+| cronjob_image.repository | string | `"guoxudongdocker/curl"` |  |
+| cronjob_image.tag | string | `"latest"` |  |
+| image.pullPolicy | string | `"IfNotPresent"` | Image pull policy. |
+| image.repository | string | `"grafana/grafana"` | Image source repository name. |
+| ingress.annotations | object | `{}` |  |
+| ingress.enabled | bool | `false` | Whether to open ingress. |
+| ingress.hosts | list | `[{"host":"grafana.chart-example.local","paths":["/"]}]` | Ingress hosts. |
+| ingress.tls | list | `[]` |  |
+| nodeSelector | object | `{}` |  |
+| password | string | `"admin"` | Grafana admin password. |
+| plugins | string | `"farski-blendstat-panel,grafana-simple-json-datasource,yesoreyeram-boomtheme-panel,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"` | Grafana plugin list. |
+| region_id | string | `"cn-shanghai"` | Aliyun Region Id. |
+| replicaCount | int | `1` | replica count. |
+| resources.limits.cpu | string | `"200m"` |  |
+| resources.limits.memory | string | `"256Mi"` |  |
+| resources.requests.cpu | string | `"100m"` |  |
+| resources.requests.memory | string | `"256Mi"` |  |
+| schedule | string | `"30 2 * * *"` | CronJob schedule. |
+| service.port | int | `80` |  |
+| service.type | string | `"ClusterIP"` |  |
 
 ### Dashboard
 
@@ -105,11 +121,11 @@ $ helm uninstall my-release -n {your_namespace}
 
 ### SLB
 
-**4层**
+**Layer 4**
 
 ![slb](docs/image/slb.png)
 
-**7层**
+**Layer 7**
 
 ![slb-7](docs/image/slb-7.png)
 
@@ -118,4 +134,3 @@ $ helm uninstall my-release -n {your_namespace}
 
 ### Redis
 ![redis](docs/image/redis.png)
-
