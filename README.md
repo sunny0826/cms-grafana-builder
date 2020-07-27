@@ -78,6 +78,7 @@ Parameter                 	 	| Description                        				| Default
 `region_id`                    	| Aliyun Region Id.                        			| `cn-shanghai`
 `password`                    	| Grafana admin password.                  			| `admin`
 `schedule`                    	| CronJob schedule.                     			| `"30 2 * * *"`
+`anonymous`                    	| Grafana auth anonymous enables.             		| `"false"`
 `image.repository`           	| Image source repository name.         			| `grafana/grafana`
 `image.pullPolicy`         		| Image pull policy.                  				| `Always`
 `build_image.repository`        | Build image source repository name.         	    | `guoxudongdocker/grafana-build`

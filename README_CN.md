@@ -76,6 +76,7 @@ $ helm uninstall my-release -n {your_namespace}
 `region_id`                    	| 阿里云 Region Id。                       			| `cn-shanghai`
 `password`                    	| Grafana admin 密码。                      			| `admin`
 `schedule`                    	| 定时任务配置。                            			| `"30 2 * * *"`
+`anonymous`                    	| 是否可以匿名查看 grafana Dashboard。                 | `"false"`
 `image.repository`           	| 镜像 repository 名称。         	            		| `grafana/grafana`
 `image.pullPolicy`         		| 镜像拉取策略。                        				| `Always`
 `build_image.repository`        | init 镜像。                                  	    | `guoxudongdocker/grafana-build`
