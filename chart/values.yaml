@@ -11,8 +11,10 @@ region_id: "cn-shanghai"
 password: "admin"
 # plugins -- Grafana plugin list.
 plugins: "farski-blendstat-panel,grafana-simple-json-datasource,yesoreyeram-boomtheme-panel,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"
-# grafana auth anonymous enables
+# anonymous -- grafana auth anonymous enables
 anonymous: false
+# dashboard -- module of dashboard
+dashboard: 'dashboard,ecs,rds,mongodb,oss,eip,redis,slb'
 
 image:
   # image.repository -- Image source repository name.
@@ -20,13 +22,26 @@ image:
   # image.pullPolicy -- Image pull policy.
   pullPolicy: IfNotPresent
 
+init_image:
+  # init_image.repository -- Image source repository of init image.
+  repository: guoxudongdocker/cms-grafana-jsonnet
+  # init_image.tag -- Image tag of init image.
+  tag: 0.1.0
+  # init_image.pullPolicy -- Init image pull policy.
+  pullPolicy: Always
+
 backend_image:
+  # backend_image.repository -- Image source repository of backend image.
   repository: guoxudongdocker/grafana-build
+  # backend_image.tag -- Image tag of backend image.
   tag: 0.5.0
+  # backend_image.pullPolicy -- Init image backend policy.
   pullPolicy: Always
 
 cronjob_image:
+  # cronjob_image.repository -- Image source repository of cronjob image.
   repository: guoxudongdocker/curl
+  # cronjob_image.tag -- Image tag of cronjob image.
   tag: latest
 
 # schedule -- CronJob schedule.

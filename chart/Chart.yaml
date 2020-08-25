@@ -2,7 +2,7 @@ apiVersion: v2
 name: cms-grafana
 description: Aliyun CMS Grafana Dashboard
 type: application
-version: 0.5.0
+version: 0.5.1
 appVersion: 7.1.0
 keywords:
 - grafana

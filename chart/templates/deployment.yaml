@@ -16,6 +16,21 @@ spec:
         app.kubernetes.io/name: {{ include "kk-grafana-cms.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      initContainers:
+        - name: init
+          imagePullPolicy: {{ .Values.init_image.pullPolicy }}
+          image: {{ .Values.init_image.repository }}:{{ .Values.init_image.tag }}
+          env:
+            - name: NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: CONFIGMAP
+              value: "cms-model"
+          command:
+            - /bin/sh
+            - -c
+            - cgt run -d {{ .Values.dashboard }} -n $NAMESPACE -c $CONFIGMAP
       serviceAccountName: {{ template "kk-grafana-cms.fullname" . }}-sa
       containers:
         - name: {{ .Chart.Name }}

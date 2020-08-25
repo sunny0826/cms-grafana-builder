@@ -1,6 +1,6 @@
 .PHONY: run build docker-run package build-all-in-one helm-run helm-install docker-clean
 
-CMS_BUILDER_VERSION=0.4.2
+CMS_BUILDER_VERSION=0.5.2
 run: export RUN_PORT=8088
 run: export ACCESS_KEY_ID=$(PLUGIN_ACCESS_KEY_ID)
 run: export ACCESS_SECRET=$(PLUGIN_ACCESS_SECRET)

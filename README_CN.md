@@ -6,7 +6,7 @@ cms-grafana
 
 Aliyun CMS Grafana Dashboard
 
-Current chart version is `0.5.0`
+Current chart version is `0.5.1`
 
 
 
@@ -77,22 +77,26 @@ $ helm uninstall my-release -n {your_namespace}
 | access_key_id | string | `""` | Aliyun Access Key Id. |
 | access_secret | string | `""` | Aliyun Access Secret. |
 | affinity | object | `{}` |  |
-| anonymous | bool | `false` |  |
-| backend_image.pullPolicy | string | `"Always"` |  |
-| backend_image.repository | string | `"guoxudongdocker/grafana-build"` |  |
-| backend_image.tag | string | `"0.5.0"` |  |
+| anonymous | bool | `false` | grafana auth anonymous enables |
+| backend_image.pullPolicy | string | `"Always"` | Init image backend policy. |
+| backend_image.repository | string | `"guoxudongdocker/grafana-build"` | Image source repository of backend image. |
+| backend_image.tag | string | `"0.5.0"` | Image tag of backend image. |
 | backend_resources.limits.cpu | string | `"200m"` |  |
 | backend_resources.limits.memory | string | `"256Mi"` |  |
 | backend_resources.requests.cpu | string | `"100m"` |  |
 | backend_resources.requests.memory | string | `"256Mi"` |  |
-| cronjob_image.repository | string | `"guoxudongdocker/curl"` |  |
-| cronjob_image.tag | string | `"latest"` |  |
+| cronjob_image.repository | string | `"guoxudongdocker/curl"` | Image source repository of cronjob image. |
+| cronjob_image.tag | string | `"latest"` | Image tag of cronjob image. |
+| dashboard | string | `"dashboard,ecs,rds,mongodb,oss,eip,redis,slb"` | module of dashboard |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy. |
 | image.repository | string | `"grafana/grafana"` | Image source repository name. |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` | Whether to open ingress. |
 | ingress.hosts | list | `[{"host":"grafana.chart-example.local","paths":["/"]}]` | Ingress hosts. |
 | ingress.tls | list | `[]` |  |
+| init_image.pullPolicy | string | `"Always"` | Init image pull policy. |
+| init_image.repository | string | `"guoxudongdocker/cms-grafana-jsonnet"` | Image source repository of init image. |
+| init_image.tag | string | `"0.1.0"` | Image tag of init image. |
 | nodeSelector | object | `{}` |  |
 | password | string | `"admin"` | Grafana admin password. |
 | plugins | string | `"farski-blendstat-panel,grafana-simple-json-datasource,yesoreyeram-boomtheme-panel,https://github.com/sunny0826/aliyun-cms-grafana/archive/master.zip;aliyun-cms-grafana"` | Grafana plugin list. |
