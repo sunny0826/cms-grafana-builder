@@ -38,7 +38,7 @@ setup(
         'aliyun-python-sdk-cms==6.0.13',
         'demjson==2.2.4',
         'jmespath==0.9.4',
-        'bottle==0.12.18',
+        'bottle==0.12.19',
     ],
     entry_points={
         'console_scripts': [
