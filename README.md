@@ -1,3 +1,5 @@
+No longer actively maintained, you can follow the alicloud official [Grafanan plugin](https://github.com/aliyun/aliyun-cms-grafana).
+
 cms-grafana
 ===========
 English | [简体中文](README_CN.md)
